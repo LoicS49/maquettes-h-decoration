@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=1280">
+<title>Demandes de devis espace pro</title>
+<script src="support.js"></script>
+<script>window.__dcLogique=function(DCLogic,StreamableLogic,React){
+
+class Component extends DCLogic {
+  items() {
+    return [
+      { id: 'd1', recu: 'Aujourd’hui, 9 h 12', recuMin: 'aujourd’hui à 9 h 12', source: 'formulaire du site', nom: 'Claire L.', commune: 'Avrillé', tel: '06 12 34 56 78', email: 'claire.l@exemple.fr', travaux: ['Peinture intérieure'], message: 'Séjour et couloir à repeindre, environ 45 m² de murs. Une fissure au plafond du séjour. Idéalement avant les fêtes.', rappel: 'Le matin', photos: 2, statut: 'nouvelle', notes: [], rappelLe: '', purge: 'le 5 novembre 2029' },
+      { id: 'd2', recu: 'Hier, 17 h 40', recuMin: 'hier à 17 h 40', source: 'formulaire du site', nom: 'SCI (exemple)', commune: 'Angers', tel: '02 41 00 00 00', email: 'gestion@exemple.fr', travaux: ['Placo, cloisons'], message: 'Création de deux bureaux sur un plateau de 80 m² : cloisons et faux plafond.', rappel: 'Peu importe', photos: 0, statut: 'nouvelle', notes: [], rappelLe: '', purge: 'le 4 novembre 2029' },
+      { id: 'd3', recu: '3 novembre', recuMin: 'le 3 novembre', source: 'formulaire du site', nom: 'Paul B.', commune: 'Beaucouzé', tel: '06 98 76 54 32', email: '', travaux: ['Béton ciré'], message: 'Salle de bain : murs de la douche et meuble vasque en béton ciré.', rappel: 'L’après-midi', photos: 3, statut: 'nouvelle', notes: [], rappelLe: '', purge: 'le 3 novembre 2029' },
+      { id: 'd4', recu: '2 novembre', recuMin: 'le 2 novembre', source: 'formulaire du site', nom: 'Mme M.', commune: 'Bouchemaine', tel: '06 11 22 33 44', email: 'mme.m@exemple.fr', travaux: ['Revêtements de sol'], message: 'Sol LVT dans le séjour et la cuisine, 60 m², ancien carrelage à recouvrir.', rappel: 'L’après-midi', photos: 1, statut: 'rappelee', notes: [{ date: '3 nov.', texte: 'Appelée. Visite à prévoir : rappeler jeudi 14 h pour fixer la date.' }], rappelLe: '2026-11-05', purge: 'le 3 novembre 2029' },
+      { id: 'd5', recu: '30 octobre', recuMin: 'le 30 octobre', source: 'appel noté à la main', nom: 'Restaurant (exemple)', commune: 'Angers', tel: '02 41 11 11 11', email: 'contact@exemple.fr', travaux: ['Décoration', 'Peinture intérieure'], message: 'Salle de 80 couverts à rafraîchir pendant la fermeture annuelle de janvier.', rappel: 'Le matin', photos: 0, statut: 'devis', notes: [{ date: '31 oct.', texte: 'Visite faite. Devis Batigest envoyé le 4 novembre.' }], rappelLe: '2026-11-12', purge: 'le 4 novembre 2029' },
+      { id: 'd6', recu: '28 octobre', recuMin: 'le 28 octobre', source: 'formulaire du site', nom: 'M. et Mme G.', commune: 'Saint-Jean-de-Linières', tel: '06 55 44 33 22', email: 'famille.g@exemple.fr', travaux: ['Rénovation extérieure'], message: 'Façade : crépi à refaire et bardage bois sur le pignon.', rappel: 'Peu importe', photos: 2, statut: 'devis', notes: [{ date: '28 oct.', texte: 'Devis envoyé. Relancer le 5 novembre.' }], rappelLe: '2026-11-05', purge: 'le 28 octobre 2029' },
+      { id: 'd7', recu: '22 octobre', recuMin: 'le 22 octobre', source: 'formulaire du site', nom: 'Cabinet (exemple)', commune: 'Angers', tel: '02 41 22 22 22', email: 'secretariat@exemple.fr', travaux: ['Peinture intérieure'], message: 'Salle d’attente et deux cabinets, travaux à faire un samedi.', rappel: 'Le matin', photos: 0, statut: 'devis', notes: [], rappelLe: '', purge: 'le 22 octobre 2029' },
+      { id: 'd8', recu: '19 octobre', recuMin: 'le 19 octobre', source: 'formulaire du site', nom: 'Julie R.', commune: 'Avrillé', tel: '06 77 88 99 00', email: 'julie.r@exemple.fr', travaux: ['Décoration'], message: 'Papier peint panoramique dans une chambre d’enfant.', rappel: 'L’après-midi', photos: 1, statut: 'devis', notes: [], rappelLe: '', purge: 'le 19 octobre 2029' },
+      { id: 'd9', recu: '16 octobre', recuMin: 'le 16 octobre', source: 'formulaire du site', nom: 'Mme P.', commune: 'Trélazé', tel: '06 33 22 11 00', email: '', travaux: ['Peinture extérieure'], message: 'Volets et portail à repeindre.', rappel: 'Peu importe', photos: 2, statut: 'gagnee', notes: [{ date: '24 oct.', texte: 'Devis signé. Chantier prévu semaine 46.' }], rappelLe: '', purge: 'le 24 octobre 2029' },
+      { id: 'd10', recu: '15 octobre', recuMin: 'le 15 octobre', source: 'formulaire du site', nom: 'M. R.', commune: 'Les Ponts-de-Cé', tel: '06 44 55 66 77', email: 'm.r@exemple.fr', travaux: ['Peinture intérieure'], message: 'Plafonds de toute la maison.', rappel: 'Le matin', photos: 0, statut: 'perdue', notes: [{ date: '22 oct.', texte: 'A choisi un autre artisan (prix).' }], rappelLe: '', purge: 'le 22 octobre 2029' }
+    ];
+  }
+  renderVals() {
+    const st = this.state || {};
+    const meta = {
+      nouvelle: { label: 'Nouvelle', cls: 'statut st-nouvelle', on: 'background:#1F5FA8;color:#FFFFFF;border-color:#1F5FA8;' },
+      rappelee: { label: 'Rappelée', cls: 'statut st-rappelee', on: 'background:#6B4FA0;color:#FFFFFF;border-color:#6B4FA0;' },
+      devis: { label: 'Devis envoyé', cls: 'statut st-devis', on: 'background:#9A5B00;color:#FFFFFF;border-color:#9A5B00;' },
+      gagnee: { label: 'Gagnée', cls: 'statut st-gagnee', on: 'background:#2F6B4A;color:#FFFFFF;border-color:#2F6B4A;' },
+      perdue: { label: 'Perdue', cls: 'statut st-perdue', on: 'background:#566072;color:#FFFFFF;border-color:#566072;' }
+    };
+    const off = 'background:#FFFFFF;color:#1F2B45;';
+    const deleted = st.deleted || [];
+    const statuts = st.statuts || {};
+    const notesMap = st.notes || {};
+    const rappels = st.rappels || {};
+    const items = this.items().filter((d) => deleted.indexOf(d.id) === -1).map((d) => {
+      const s = statuts[d.id] || d.statut;
+      return Object.assign({}, d, {
+        statut: s,
+        statutLabel: meta[s].label,
+        cls: meta[s].cls,
+        notes: (d.notes || []).concat(notesMap[d.id] || []),
+        rappelLe: rappels[d.id] != null ? rappels[d.id] : d.rappelLe,
+        travauxTexte: d.travaux.join(', '),
+        emailTexte: d.email || 'Non renseigné'
+      });
+    });
+    const filtre = st.filtre || 'toutes';
+    const q = (st.q || '').toLowerCase();
+    const visiblesBrut = items.filter((d) => (filtre === 'toutes' || d.statut === filtre) && (!q || (d.nom + ' ' + d.commune + ' ' + d.travauxTexte).toLowerCase().indexOf(q) !== -1));
+    const selId = st.sel && items.some((d) => d.id === st.sel) ? st.sel : (visiblesBrut[0] ? visiblesBrut[0].id : (items[0] ? items[0].id : null));
+    const visibles = visiblesBrut.map((d) => Object.assign({}, d, {
+      pressed: d.id === selId ? 'true' : 'false',
+      rowStyle: d.id === selId ? 'background:#F7F3EA;border-left-color:#9F8045;' : 'background:#FFFFFF;',
+      pick: () => this.setState({ sel: d.id, confirmDelete: false, brouillon: '' })
+    }));
+    const found = items.filter((d) => d.id === selId)[0];
+    const cur = found ? Object.assign({}, found, {
+      hasNotes: found.notes.length > 0,
+      hasPhotos: found.photos > 0,
+      photosList: Array.from({ length: found.photos }, (_, i) => 'Photo ' + (i + 1))
+    }) : null;
+    const compte = (k) => items.filter((d) => k === 'toutes' || d.statut === k).length;
+    const ongletsDef = [['toutes', 'Toutes'], ['nouvelle', 'Nouvelles'], ['rappelee', 'Rappelées'], ['devis', 'Devis envoyé'], ['gagnee', 'Gagnées'], ['perdue', 'Perdues']];
+    const onglets = ongletsDef.map((o) => ({
+      label: o[1], n: compte(o[0]), pressed: filtre === o[0] ? 'true' : 'false',
+      colors: filtre === o[0] ? 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;' : off,
+      pick: () => this.setState({ filtre: o[0], confirmDelete: false })
+    }));
+    const statutBtns = Object.keys(meta).map((k) => ({
+      label: meta[k].label,
+      pressed: cur && cur.statut === k ? 'true' : 'false',
+      colors: cur && cur.statut === k ? meta[k].on : off,
+      pick: () => { if (!cur) return; const n = Object.assign({}, statuts); n[cur.id] = k; this.setState({ statuts: n }); }
+    }));
+    const brouillon = st.brouillon || '';
+    return {
+      showOptions: this.props.showOptions ?? true,
+      nbNouvelles: compte('nouvelle'),
+      onglets: onglets,
+      visibles: visibles,
+      listeVide: visibles.length === 0,
+      hasCur: !!cur,
+      noCur: !cur,
+      cur: cur || {},
+      statutBtns: statutBtns,
+      q: st.q || '',
+      onQ: (e) => this.setState({ q: e.target.value }),
+      brouillon: brouillon,
+      onBrouillon: (e) => this.setState({ brouillon: e.target.value }),
+      ajouterNote: () => {
+        if (!cur || !brouillon.trim()) return;
+        const n = Object.assign({}, notesMap);
+        n[cur.id] = (n[cur.id] || []).concat([{ date: '5 nov.', texte: brouillon.trim() }]);
+        this.setState({ notes: n, brouillon: '' });
+      },
+      onRappel: (e) => { if (!cur) return; const r = Object.assign({}, rappels); r[cur.id] = e.target.value; this.setState({ rappels: r }); },
+      confirmDelete: st.confirmDelete === true,
+      askDelete: () => this.setState({ confirmDelete: true }),
+      cancelDelete: () => this.setState({ confirmDelete: false }),
+      doDelete: () => { if (!cur) return; this.setState({ deleted: deleted.concat([cur.id]), confirmDelete: false, sel: null, toast: 'Demande supprimée, avec ses photos et ses notes.' }); },
+      avisDisabled: !(cur && cur.statut === 'gagnee'),
+      avisTitle: cur && cur.statut === 'gagnee' ? 'Envoyer le lien vers la fiche Google' : 'Disponible quand la demande est gagnée',
+      demanderAvis: () => this.setState({ toast: 'Demande d’avis prête : SMS et e-mail avec le lien vers votre fiche Google, relance dans 7 jours.' }),
+      exporter: () => this.setState({ toast: 'Fichier clients-batigest.csv prêt : ' + items.length + ' contacts, au format d’import de Batigest.' }),
+      exporterUn: () => this.setState({ toast: 'Fiche client prête à importer dans Batigest : ' + (cur ? cur.nom : '') + '.' }),
+      exporterDonnees: () => this.setState({ toast: 'Export des données de ' + (cur ? cur.nom : '') + ' prêt (fichier lisible, à transmettre sur demande).' }),
+      hasToast: !!st.toast,
+      toast: st.toast || '',
+      closeToast: () => this.setState({ toast: '' }),
+      noop: () => {}
+    };
+  }
+}
+
+;return (typeof Component!=="undefined"&&Component)||undefined;};</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<style>
+body{margin:0;background:#F1F3F7;color:#1F2B45;font-family:Montserrat,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7D6432}a:hover{color:#1F2B45}
+.serif{font-family:"PT Serif",Georgia,"Times New Roman",serif}
+.side a{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 14px;border-radius:8px;color:#C3C9D6;text-decoration:none;font-size:14px;font-weight:600}
+.side a:hover{background:#2A3654;color:#FFFFFF}
+.side a[aria-current="page"]{background:#2A3654;color:#FFFFFF}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:8px;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:14px;text-decoration:none;box-sizing:border-box;cursor:pointer;white-space:nowrap}
+.b-or{background:#7D6432;color:#FFFFFF;border:1px solid #7D6432}.b-or:hover{background:#1F2B45;border-color:#1F2B45;color:#FFFFFF}
+.b-ligne{background:#FFFFFF;color:#1F2B45;border:1px solid #9AA3B5}.b-ligne:hover{border-color:#1F2B45}
+.b-danger{background:#FFFFFF;color:#B4372B;border:1px solid #B4372B}.b-danger:hover{background:#FBECEA}
+.b[disabled]{opacity:.45;cursor:not-allowed}
+.panneau{background:#FFFFFF;border:1px solid #E3E6EC;border-radius:12px}
+.statut{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.st-nouvelle{background:#E8F0FA;color:#1F5FA8}.st-rappelee{background:#F0ECF8;color:#6B4FA0}.st-devis{background:#FBF1E3;color:#9A5B00}.st-gagnee{background:#E7F3EC;color:#2F6B4A}.st-perdue{background:#EEF0F3;color:#566072}
+.onglet{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #C7CDD8;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;cursor:pointer}
+.ligne{display:flex;flex-direction:column;gap:6px;width:100%;padding:14px 16px;border:0;border-left:3px solid transparent;border-bottom:1px solid #EEF0F3;text-align:left;font-family:Montserrat,Arial,sans-serif;color:#1F2B45;cursor:pointer;box-sizing:border-box}
+.ligne:hover{background:#F7F8FB}
+.champ{width:100%;box-sizing:border-box;min-height:44px;padding:10px 12px;border:1px solid #9AA3B5;border-radius:8px;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,Arial,sans-serif;font-size:14px}
+.lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#566072;margin-bottom:6px}
+.option{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;border:1px solid #9F8045;color:#6E5729;background:#FBF7EF;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+:focus-visible{outline:3px solid #C9A96A;outline-offset:2px}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; min-height: 100vh; background: #F1F3F7;">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 280px; background: #1F2B45; color: #FFFFFF; padding: 24px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px;">
+<div style="display: flex; align-items: center; gap: 12px; padding: 0 6px;"><img src="photos/8766a01720ebb21b77ebbfa6ba550325.png" alt="" style="height: 48px; width: auto;"><div><p style="margin: 0; font-weight: 700;">H Décoration</p><p style="margin: 0; font-size: 12px; color: #C3C9D6;">Espace pro</p></div></div>
+<nav aria-label="Menu de l’espace pro" style="display: flex; flex-direction: column; gap: 4px;">
+<a href="BO-Tableau-de-bord.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span style="flex: 1;">Tableau de bord</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Pages.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>Pages du site</a>
+<a href="BO-Demandes.dc.html" aria-current="page"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg><span style="flex: 1;">Demandes de devis</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Mobile.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Réalisations</a>
+<a href="BO-Infos.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Infos de l’entreprise</a>
+<sc-if value="{{showOptions}}" hint-placeholder-val="{{ true }}">
+<a href="BO-Planning.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span style="flex: 1;">Planning</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Visibilite.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg><span style="flex: 1;">Visibilité</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+</sc-if>
+<a href="BO-Infos.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Comptes et sécurité</a>
+</nav>
+<div style="margin-top: auto; padding: 14px; border: 1px solid #2A3654; border-radius: 10px; font-size: 12px; line-height: 1.5; color: #C3C9D6;">Chaque nouvelle demande arrive aussi par e-mail sur contact@h-decoration.fr.</div>
+</aside>
+
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px;">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;">
+<div><p style="margin: 0; font-size: 14px; color: #566072;">Formulaire du site et appels notés à la main</p><h1 class="serif" style="margin: 4px 0 0; font-size: 36px; font-weight: 700;">Demandes de devis</h1></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<sc-if value="{{showOptions}}" hint-placeholder-val="{{ true }}">
+<button type="button" class="b b-ligne" onClick="{{exporter}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Exporter vers Batigest<span class="option">Option</span></button>
+</sc-if>
+<button type="button" class="b b-or" onClick="{{noop}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>Noter un appel</button>
+</div>
+</div>
+
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="display: flex; align-items: center; gap: 12px; background: #1F2B45; color: #FFFFFF; border-radius: 10px; padding: 12px 16px; font-size: 14px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="flex: 1;">{{toast}}</span><button type="button" onClick="{{closeToast}}" aria-label="Fermer le message" style="border: 0; background: transparent; color: #FFFFFF; cursor: pointer; min-height: 32px; min-width: 32px;"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+</sc-if>
+
+<div role="group" aria-label="Filtrer par statut" style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{onglets}}" as="o" hint-placeholder-count="6">
+<button type="button" class="onglet" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="{{o.colors}}">{{o.label}}<span style="font-variant-numeric: tabular-nums; opacity: .8;">{{o.n}}</span></button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+
+<section class="panneau" aria-label="Liste des demandes" style="flex: 1 1 340px; min-width: 0; overflow: hidden;">
+<div style="padding: 14px 16px; border-bottom: 1px solid #E3E6EC;">
+<label for="q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Rechercher une demande</label>
+<input id="q" class="champ" type="search" placeholder="Nom, commune, travaux…" value="{{q}}" onChange="{{onQ}}">
+</div>
+<sc-for list="{{visibles}}" as="d" hint-placeholder-count="8">
+<button type="button" class="ligne" aria-pressed="{{d.pressed}}" onClick="{{d.pick}}" style="{{d.rowStyle}}">
+<span style="display: flex; justify-content: space-between; gap: 10px; width: 100%;"><span style="font-weight: 700; font-size: 15px;">{{d.nom}}</span><span class="{{d.cls}}">{{d.statutLabel}}</span></span>
+<span style="font-size: 13px; color: #3A4458;">{{d.commune}} · {{d.travauxTexte}}</span>
+<span style="font-size: 12px; color: #566072;">{{d.recu}}</span>
+</button>
+</sc-for>
+<sc-if value="{{listeVide}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; padding: 32px 16px; font-size: 14px; color: #566072; text-align: center;">Aucune demande ne correspond.</p></sc-if>
+</section>
+
+<sc-if value="{{hasCur}}" hint-placeholder-val="{{ true }}">
+<section class="panneau" aria-labelledby="fiche-nom" style="flex: 2 1 520px; min-width: 0; padding: 24px 28px; display: flex; flex-direction: column; gap: 22px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px;">
+<div><h2 id="fiche-nom" class="serif" style="margin: 0; font-size: 28px; font-weight: 700;">{{cur.nom}}</h2><p style="margin: 4px 0 0; font-size: 14px; color: #566072;">{{cur.commune}} · reçue {{cur.recuMin}} · {{cur.source}}</p></div>
+<span class="{{cur.cls}}" style="font-size: 13px; padding: 6px 12px;">{{cur.statutLabel}}</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+<a href="tel:+33600000000" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 10px; background: #1F2B45; color: #FFFFFF; text-decoration: none;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span><span style="display: block; font-size: 12px; color: #C3C9D6;">Appeler</span><span style="font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums;">{{cur.tel}}</span></span></a>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E3E6EC;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span style="min-width: 0;"><span style="display: block; font-size: 12px; color: #566072;">E-mail</span><span style="font-weight: 600; font-size: 14px; word-break: break-all;">{{cur.emailTexte}}</span></span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 10px; border: 1px solid #E3E6EC;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span><span style="display: block; font-size: 12px; color: #566072;">Rappel souhaité</span><span style="font-weight: 600; font-size: 14px;">{{cur.rappel}}</span></span></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<p class="lbl" style="margin: 0;">Le projet</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><sc-for list="{{cur.travaux}}" as="t" hint-placeholder-count="1"><span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: #F1F3F7; font-size: 13px; font-weight: 600;">{{t}}</span></sc-for></div>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #1F2B45; background: #F7F8FB; border-radius: 10px; padding: 14px 16px;">{{cur.message}}</p>
+<sc-if value="{{cur.hasPhotos}}" hint-placeholder-val="{{ true }}"><div style="display: flex; gap: 10px;"><sc-for list="{{cur.photosList}}" as="p" hint-placeholder-count="2"><div style="width: 88px; height: 88px; border-radius: 8px; background: #E3E6EC; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #566072;">{{p}}</div></sc-for></div></sc-if>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<p class="lbl" style="margin: 0;">Statut</p>
+<div role="group" aria-label="Changer le statut" style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{statutBtns}}" as="s" hint-placeholder-count="5"><button type="button" class="onglet" aria-pressed="{{s.pressed}}" onClick="{{s.pick}}" style="{{s.colors}}">{{s.label}}</button></sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 1 1 200px; min-width: 0;"><label class="lbl" for="rappel-le">Rappeler le</label><input id="rappel-le" class="champ" type="date" value="{{cur.rappelLe}}" onChange="{{onRappel}}"></div>
+<div style="flex: 2 1 300px; min-width: 0;"><label class="lbl" for="note">Ajouter une note</label><div style="display: flex; gap: 8px;"><input id="note" class="champ" type="text" placeholder="Ex. : visite fixée mardi 10 h" value="{{brouillon}}" onChange="{{onBrouillon}}"><button type="button" class="b b-ligne" onClick="{{ajouterNote}}">Ajouter</button></div></div>
+</div>
+
+<sc-if value="{{cur.hasNotes}}" hint-placeholder-val="{{ false }}">
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
+<sc-for list="{{cur.notes}}" as="n" hint-placeholder-count="1"><li style="display: flex; gap: 14px; font-size: 14px; line-height: 1.5; padding: 10px 0; border-top: 1px solid #EEF0F3;"><span style="flex: none; width: 64px; font-weight: 700; color: #566072;">{{n.date}}</span><span>{{n.texte}}</span></li></sc-for>
+</ol>
+</sc-if>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 18px; border-top: 1px solid #E3E6EC;">
+<sc-if value="{{showOptions}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<button type="button" class="b b-ligne" onClick="{{exporterUn}}">Créer la fiche client Batigest<span class="option">Option</span></button>
+<button type="button" class="b b-ligne" onClick="{{demanderAvis}}" disabled="{{avisDisabled}}" title="{{avisTitle}}">Demander un avis Google<span class="option">Option</span></button>
+</div>
+</sc-if>
+<span style="flex: 1;"></span>
+<button type="button" class="b b-ligne" onClick="{{exporterDonnees}}" style="min-height: 40px; font-size: 13px;">Exporter ses données</button>
+<button type="button" class="b b-danger" onClick="{{askDelete}}" style="min-height: 40px; font-size: 13px;">Supprimer</button>
+</div>
+
+<sc-if value="{{confirmDelete}}" hint-placeholder-val="{{ false }}">
+<div role="alertdialog" aria-labelledby="conf-titre" style="border: 1px solid #B4372B; background: #FBECEA; border-radius: 10px; padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+<p id="conf-titre" style="margin: 0; flex: 1 1 280px; font-size: 14px; line-height: 1.5; color: #1F2B45;">Supprimer définitivement la demande de <strong>{{cur.nom}}</strong>, ses photos et ses notes ? Cette action est irréversible.</p>
+<button type="button" class="b" onClick="{{doDelete}}" style="background: #B4372B; color: #FFFFFF; border: 1px solid #B4372B;">Supprimer</button>
+<button type="button" class="b b-ligne" onClick="{{cancelDelete}}">Annuler</button>
+</div>
+</sc-if>
+
+<p style="margin: 0; font-size: 12px; color: #566072;">Données conservées 3 ans après le dernier échange, puis effacées automatiquement : {{cur.purge}}.</p>
+</section>
+</sc-if>
+
+<sc-if value="{{noCur}}" hint-placeholder-val="{{ false }}">
+<section class="panneau" style="flex: 2 1 520px; min-width: 0; padding: 48px; text-align: center; color: #566072;">Aucune demande à afficher.</section>
+</sc-if>
+
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showOptions":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+  items() {
+    return [
+      { id: 'd1', recu: 'Aujourd’hui, 9 h 12', recuMin: 'aujourd’hui à 9 h 12', source: 'formulaire du site', nom: 'Claire L.', commune: 'Avrillé', tel: '06 12 34 56 78', email: 'claire.l@exemple.fr', travaux: ['Peinture intérieure'], message: 'Séjour et couloir à repeindre, environ 45 m² de murs. Une fissure au plafond du séjour. Idéalement avant les fêtes.', rappel: 'Le matin', photos: 2, statut: 'nouvelle', notes: [], rappelLe: '', purge: 'le 5 novembre 2029' },
+      { id: 'd2', recu: 'Hier, 17 h 40', recuMin: 'hier à 17 h 40', source: 'formulaire du site', nom: 'SCI (exemple)', commune: 'Angers', tel: '02 41 00 00 00', email: 'gestion@exemple.fr', travaux: ['Placo, cloisons'], message: 'Création de deux bureaux sur un plateau de 80 m² : cloisons et faux plafond.', rappel: 'Peu importe', photos: 0, statut: 'nouvelle', notes: [], rappelLe: '', purge: 'le 4 novembre 2029' },
+      { id: 'd3', recu: '3 novembre', recuMin: 'le 3 novembre', source: 'formulaire du site', nom: 'Paul B.', commune: 'Beaucouzé', tel: '06 98 76 54 32', email: '', travaux: ['Béton ciré'], message: 'Salle de bain : murs de la douche et meuble vasque en béton ciré.', rappel: 'L’après-midi', photos: 3, statut: 'nouvelle', notes: [], rappelLe: '', purge: 'le 3 novembre 2029' },
+      { id: 'd4', recu: '2 novembre', recuMin: 'le 2 novembre', source: 'formulaire du site', nom: 'Mme M.', commune: 'Bouchemaine', tel: '06 11 22 33 44', email: 'mme.m@exemple.fr', travaux: ['Revêtements de sol'], message: 'Sol LVT dans le séjour et la cuisine, 60 m², ancien carrelage à recouvrir.', rappel: 'L’après-midi', photos: 1, statut: 'rappelee', notes: [{ date: '3 nov.', texte: 'Appelée. Visite à prévoir : rappeler jeudi 14 h pour fixer la date.' }], rappelLe: '2026-11-05', purge: 'le 3 novembre 2029' },
+      { id: 'd5', recu: '30 octobre', recuMin: 'le 30 octobre', source: 'appel noté à la main', nom: 'Restaurant (exemple)', commune: 'Angers', tel: '02 41 11 11 11', email: 'contact@exemple.fr', travaux: ['Décoration', 'Peinture intérieure'], message: 'Salle de 80 couverts à rafraîchir pendant la fermeture annuelle de janvier.', rappel: 'Le matin', photos: 0, statut: 'devis', notes: [{ date: '31 oct.', texte: 'Visite faite. Devis Batigest envoyé le 4 novembre.' }], rappelLe: '2026-11-12', purge: 'le 4 novembre 2029' },
+      { id: 'd6', recu: '28 octobre', recuMin: 'le 28 octobre', source: 'formulaire du site', nom: 'M. et Mme G.', commune: 'Saint-Jean-de-Linières', tel: '06 55 44 33 22', email: 'famille.g@exemple.fr', travaux: ['Rénovation extérieure'], message: 'Façade : crépi à refaire et bardage bois sur le pignon.', rappel: 'Peu importe', photos: 2, statut: 'devis', notes: [{ date: '28 oct.', texte: 'Devis envoyé. Relancer le 5 novembre.' }], rappelLe: '2026-11-05', purge: 'le 28 octobre 2029' },
+      { id: 'd7', recu: '22 octobre', recuMin: 'le 22 octobre', source: 'formulaire du site', nom: 'Cabinet (exemple)', commune: 'Angers', tel: '02 41 22 22 22', email: 'secretariat@exemple.fr', travaux: ['Peinture intérieure'], message: 'Salle d’attente et deux cabinets, travaux à faire un samedi.', rappel: 'Le matin', photos: 0, statut: 'devis', notes: [], rappelLe: '', purge: 'le 22 octobre 2029' },
+      { id: 'd8', recu: '19 octobre', recuMin: 'le 19 octobre', source: 'formulaire du site', nom: 'Julie R.', commune: 'Avrillé', tel: '06 77 88 99 00', email: 'julie.r@exemple.fr', travaux: ['Décoration'], message: 'Papier peint panoramique dans une chambre d’enfant.', rappel: 'L’après-midi', photos: 1, statut: 'devis', notes: [], rappelLe: '', purge: 'le 19 octobre 2029' },
+      { id: 'd9', recu: '16 octobre', recuMin: 'le 16 octobre', source: 'formulaire du site', nom: 'Mme P.', commune: 'Trélazé', tel: '06 33 22 11 00', email: '', travaux: ['Peinture extérieure'], message: 'Volets et portail à repeindre.', rappel: 'Peu importe', photos: 2, statut: 'gagnee', notes: [{ date: '24 oct.', texte: 'Devis signé. Chantier prévu semaine 46.' }], rappelLe: '', purge: 'le 24 octobre 2029' },
+      { id: 'd10', recu: '15 octobre', recuMin: 'le 15 octobre', source: 'formulaire du site', nom: 'M. R.', commune: 'Les Ponts-de-Cé', tel: '06 44 55 66 77', email: 'm.r@exemple.fr', travaux: ['Peinture intérieure'], message: 'Plafonds de toute la maison.', rappel: 'Le matin', photos: 0, statut: 'perdue', notes: [{ date: '22 oct.', texte: 'A choisi un autre artisan (prix).' }], rappelLe: '', purge: 'le 22 octobre 2029' }
+    ];
+  }
+  renderVals() {
+    const st = this.state || {};
+    const meta = {
+      nouvelle: { label: 'Nouvelle', cls: 'statut st-nouvelle', on: 'background:#1F5FA8;color:#FFFFFF;border-color:#1F5FA8;' },
+      rappelee: { label: 'Rappelée', cls: 'statut st-rappelee', on: 'background:#6B4FA0;color:#FFFFFF;border-color:#6B4FA0;' },
+      devis: { label: 'Devis envoyé', cls: 'statut st-devis', on: 'background:#9A5B00;color:#FFFFFF;border-color:#9A5B00;' },
+      gagnee: { label: 'Gagnée', cls: 'statut st-gagnee', on: 'background:#2F6B4A;color:#FFFFFF;border-color:#2F6B4A;' },
+      perdue: { label: 'Perdue', cls: 'statut st-perdue', on: 'background:#566072;color:#FFFFFF;border-color:#566072;' }
+    };
+    const off = 'background:#FFFFFF;color:#1F2B45;';
+    const deleted = st.deleted || [];
+    const statuts = st.statuts || {};
+    const notesMap = st.notes || {};
+    const rappels = st.rappels || {};
+    const items = this.items().filter((d) => deleted.indexOf(d.id) === -1).map((d) => {
+      const s = statuts[d.id] || d.statut;
+      return Object.assign({}, d, {
+        statut: s,
+        statutLabel: meta[s].label,
+        cls: meta[s].cls,
+        notes: (d.notes || []).concat(notesMap[d.id] || []),
+        rappelLe: rappels[d.id] != null ? rappels[d.id] : d.rappelLe,
+        travauxTexte: d.travaux.join(', '),
+        emailTexte: d.email || 'Non renseigné'
+      });
+    });
+    const filtre = st.filtre || 'toutes';
+    const q = (st.q || '').toLowerCase();
+    const visiblesBrut = items.filter((d) => (filtre === 'toutes' || d.statut === filtre) && (!q || (d.nom + ' ' + d.commune + ' ' + d.travauxTexte).toLowerCase().indexOf(q) !== -1));
+    const selId = st.sel && items.some((d) => d.id === st.sel) ? st.sel : (visiblesBrut[0] ? visiblesBrut[0].id : (items[0] ? items[0].id : null));
+    const visibles = visiblesBrut.map((d) => Object.assign({}, d, {
+      pressed: d.id === selId ? 'true' : 'false',
+      rowStyle: d.id === selId ? 'background:#F7F3EA;border-left-color:#9F8045;' : 'background:#FFFFFF;',
+      pick: () => this.setState({ sel: d.id, confirmDelete: false, brouillon: '' })
+    }));
+    const found = items.filter((d) => d.id === selId)[0];
+    const cur = found ? Object.assign({}, found, {
+      hasNotes: found.notes.length > 0,
+      hasPhotos: found.photos > 0,
+      photosList: Array.from({ length: found.photos }, (_, i) => 'Photo ' + (i + 1))
+    }) : null;
+    const compte = (k) => items.filter((d) => k === 'toutes' || d.statut === k).length;
+    const ongletsDef = [['toutes', 'Toutes'], ['nouvelle', 'Nouvelles'], ['rappelee', 'Rappelées'], ['devis', 'Devis envoyé'], ['gagnee', 'Gagnées'], ['perdue', 'Perdues']];
+    const onglets = ongletsDef.map((o) => ({
+      label: o[1], n: compte(o[0]), pressed: filtre === o[0] ? 'true' : 'false',
+      colors: filtre === o[0] ? 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;' : off,
+      pick: () => this.setState({ filtre: o[0], confirmDelete: false })
+    }));
+    const statutBtns = Object.keys(meta).map((k) => ({
+      label: meta[k].label,
+      pressed: cur && cur.statut === k ? 'true' : 'false',
+      colors: cur && cur.statut === k ? meta[k].on : off,
+      pick: () => { if (!cur) return; const n = Object.assign({}, statuts); n[cur.id] = k; this.setState({ statuts: n }); }
+    }));
+    const brouillon = st.brouillon || '';
+    return {
+      showOptions: this.props.showOptions ?? true,
+      nbNouvelles: compte('nouvelle'),
+      onglets: onglets,
+      visibles: visibles,
+      listeVide: visibles.length === 0,
+      hasCur: !!cur,
+      noCur: !cur,
+      cur: cur || {},
+      statutBtns: statutBtns,
+      q: st.q || '',
+      onQ: (e) => this.setState({ q: e.target.value }),
+      brouillon: brouillon,
+      onBrouillon: (e) => this.setState({ brouillon: e.target.value }),
+      ajouterNote: () => {
+        if (!cur || !brouillon.trim()) return;
+        const n = Object.assign({}, notesMap);
+        n[cur.id] = (n[cur.id] || []).concat([{ date: '5 nov.', texte: brouillon.trim() }]);
+        this.setState({ notes: n, brouillon: '' });
+      },
+      onRappel: (e) => { if (!cur) return; const r = Object.assign({}, rappels); r[cur.id] = e.target.value; this.setState({ rappels: r }); },
+      confirmDelete: st.confirmDelete === true,
+      askDelete: () => this.setState({ confirmDelete: true }),
+      cancelDelete: () => this.setState({ confirmDelete: false }),
+      doDelete: () => { if (!cur) return; this.setState({ deleted: deleted.concat([cur.id]), confirmDelete: false, sel: null, toast: 'Demande supprimée, avec ses photos et ses notes.' }); },
+      avisDisabled: !(cur && cur.statut === 'gagnee'),
+      avisTitle: cur && cur.statut === 'gagnee' ? 'Envoyer le lien vers la fiche Google' : 'Disponible quand la demande est gagnée',
+      demanderAvis: () => this.setState({ toast: 'Demande d’avis prête : SMS et e-mail avec le lien vers votre fiche Google, relance dans 7 jours.' }),
+      exporter: () => this.setState({ toast: 'Fichier clients-batigest.csv prêt : ' + items.length + ' contacts, au format d’import de Batigest.' }),
+      exporterUn: () => this.setState({ toast: 'Fiche client prête à importer dans Batigest : ' + (cur ? cur.nom : '') + '.' }),
+      exporterDonnees: () => this.setState({ toast: 'Export des données de ' + (cur ? cur.nom : '') + ' prêt (fichier lisible, à transmettre sur demande).' }),
+      hasToast: !!st.toast,
+      toast: st.toast || '',
+      closeToast: () => this.setState({ toast: '' }),
+      noop: () => {}
+    };
+  }
+}
+</script>
+</body>
+</html>

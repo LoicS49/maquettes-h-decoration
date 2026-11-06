@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style id="cadre-mobile">html,body{background:#DCE0E8 !important;margin:0}#dc-root{display:flex;justify-content:center;align-items:flex-start;padding:28px 0;box-sizing:border-box}#dc-root>*{flex:none;border-radius:30px;overflow:hidden;box-shadow:0 20px 60px rgba(31,43,69,.28)}@media (max-width:440px){#dc-root{padding:0}#dc-root>*{border-radius:0;box-shadow:none}}</style>
+<title>Espace pro mobile</title>
+<script src="support.js"></script>
+<script>window.__dcLogique=function(DCLogic,StreamableLogic,React){
+
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const step = st.step || 'accueil';
+    const order = ['photos', 'infos', 'apercu'];
+    const idx = order.indexOf(step);
+    const titre = typeof st.titre === 'string' ? st.titre : 'Rénovation d’un escalier';
+    const commune = typeof st.commune === 'string' ? st.commune : 'Angers';
+    const lieu = st.lieu || 'interieur';
+    const texte = typeof st.texte === 'string' ? st.texte : 'Conseil couleurs, ponçage puis peinture de l’escalier : structure gris anthracite, marches en bois clair. L’entrée paraît plus grande.';
+    const sel = Array.isArray(st.travaux) ? st.travaux : ['peinture'];
+    const accueil = st.accueil !== false;
+    const galerie = st.galerie === true;
+    const google = st.google !== false;
+    const accord = st.accord === true;
+    const versions = [
+      'Rénovation d’un escalier à ' + commune + ' : ponçage complet, sous-couche, puis laque gris anthracite sur la structure. Les marches, poncées et vernies, gardent un bois clair. L’entrée paraît plus lumineuse et plus grande.',
+      'À ' + commune + ', cet escalier en bois verni orangé a été poncé puis repeint : structure gris anthracite, marches vernies dans un bois clair. Un contraste net qui modernise toute l’entrée.'
+    ];
+    const iaFait = typeof st.ia === 'number';
+    const tousTravaux = [['peinture', 'Peinture'], ['decoration', 'Décoration'], ['sols', 'Sols'], ['placo', 'Placo'], ['beton', 'Béton ciré'], ['isolation', 'Isolation'], ['facade', 'Façade']];
+    const on = 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;';
+    const off = 'background:#FFFFFF;color:#1F2B45;';
+    const slug = (titre + ' ' + commune).toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    return {
+      isAccueil: step === 'accueil',
+      isFlow: idx !== -1,
+      isPhotos: step === 'photos',
+      isInfos: step === 'infos',
+      isApercu: step === 'apercu',
+      notApercu: step !== 'apercu',
+      isPublie: step === 'publie',
+      stepNum: idx + 1,
+      progress: Math.round(((idx + 1) / 3) * 100),
+      backLabel: idx === 0 ? 'Annuler et revenir à l’accueil' : 'Revenir à l’étape précédente',
+      goPhotos: () => this.setState({ step: 'photos' }),
+      goAccueil: () => this.setState({ step: 'accueil' }),
+      goBack: () => this.setState({ step: idx <= 0 ? 'accueil' : order[idx - 1] }),
+      goNext: () => this.setState({ step: order[Math.min(idx + 1, 2)] }),
+      publish: () => this.setState({ step: 'publie' }),
+      restart: () => this.setState({ step: 'photos', accord: false, ia: undefined }),
+      noop: () => {},
+      titre: titre,
+      commune: commune,
+      texte: texte,
+      texteLen: texte.length,
+      onTitre: (e) => this.setState({ titre: e.target.value }),
+      onCommune: (e) => this.setState({ commune: e.target.value }),
+      onTexte: (e) => this.setState({ texte: e.target.value.slice(0, 300) }),
+      communes: ['Angers', 'Avrillé', 'Beaucouzé'].map((c) => ({ label: c, pick: () => this.setState({ commune: c }) })),
+      lieux: [['interieur', 'Intérieur'], ['exterieur', 'Extérieur']].map((l) => ({
+        label: l[1], pressed: lieu === l[0] ? 'true' : 'false', colors: lieu === l[0] ? on : off,
+        pick: () => this.setState({ lieu: l[0] })
+      })),
+      lieuLabel: lieu === 'exterieur' ? 'Extérieur' : 'Intérieur',
+      travauxBtns: tousTravaux.map((t) => {
+        const actif = sel.indexOf(t[0]) !== -1;
+        return {
+          label: t[1], pressed: actif ? 'true' : 'false', colors: actif ? on : off,
+          toggle: () => this.setState({ travaux: actif ? sel.filter((x) => x !== t[0]) : sel.concat([t[0]]) })
+        };
+      }),
+      travauxLabel: tousTravaux.filter((t) => sel.indexOf(t[0]) !== -1).map((t) => t[1]).join(', ') || 'Travaux à préciser',
+      accueilPressed: accueil ? 'true' : 'false',
+      accueilTrack: accueil ? 'background:#2F6B4A;' : 'background:#9AA3B5;',
+      accueilKnob: accueil ? 'left:23px;' : 'left:3px;',
+      toggleAccueil: () => this.setState({ accueil: !accueil }),
+      galeriePressed: galerie ? 'true' : 'false',
+      galerieTrack: galerie ? 'background:#2F6B4A;' : 'background:#9AA3B5;',
+      galerieKnob: galerie ? 'left:23px;' : 'left:3px;',
+      toggleGalerie: () => this.setState({ galerie: !galerie }),
+      accueilPhrase: accueil ? ' et sur la page d’accueil' : '',
+      iaFait: iaFait,
+      redigerLabel: iaFait ? 'Proposer une autre version' : 'Rédiger avec l’IA',
+      rediger: () => { const n = iaFait ? (st.ia + 1) % versions.length : 0; this.setState({ ia: n, texte: versions[n] }); },
+      seoTitre: 'Escalier gris anthracite et bois clair à ' + commune + ' · H Décoration',
+      seoDesc: 'Ponçage, laque gris anthracite et marches en bois clair : la rénovation d’un escalier à ' + commune + ' par H Décoration, peintre-décorateur.',
+      googlePressed: google ? 'true' : 'false',
+      googleTrack: google ? 'background:#2F6B4A;' : 'background:#9AA3B5;',
+      googleKnob: google ? 'left:23px;' : 'left:3px;',
+      toggleGoogle: () => this.setState({ google: !google }),
+      googlePhrase: google ? 'Post publié sur votre fiche Google, avec la photo après.' : 'Pas de post Google pour cette réalisation.',
+      accordChecked: accord ? 'true' : 'false',
+      accordBorder: accord ? '#2F6B4A' : '#E3E6EC',
+      accordBox: accord ? 'background:#2F6B4A;border-color:#2F6B4A;' : 'background:#FFFFFF;',
+      accordTick: accord ? '' : 'visibility:hidden;',
+      toggleAccord: () => this.setState({ accord: !accord }),
+      publishDisabled: !accord,
+      slug: slug
+    };
+  }
+}
+
+;return (typeof Component!=="undefined"&&Component)||undefined;};</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#7D6432}a:hover{color:#1F2B45}
+.serif{font-family:"PT Serif",Georgia,"Times New Roman",serif}
+.defile{scrollbar-width:none}.defile::-webkit-scrollbar{display:none}
+.b{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 20px;border-radius:10px;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:16px;text-decoration:none;box-sizing:border-box;cursor:pointer;width:100%}
+.b-or{background:#7D6432;color:#FFFFFF;border:1px solid #7D6432}
+.b-ligne{background:#FFFFFF;color:#1F2B45;border:1px solid #9AA3B5}
+.b:disabled{opacity:.45;cursor:not-allowed}
+.carte{background:#FFFFFF;border:1px solid #E3E6EC;border-radius:14px;padding:16px}
+.lbl{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:#1F2B45}
+.champ{width:100%;box-sizing:border-box;min-height:52px;padding:12px 14px;border:1px solid #9AA3B5;border-radius:10px;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,Arial,sans-serif;font-size:16px}
+.puce{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:1px solid #9AA3B5;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+.option{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;border:1px solid #9F8045;color:#6E5729;background:#FBF7EF;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.retour{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:transparent;color:#FFFFFF;cursor:pointer;padding:0}
+.onglet{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:64px;text-decoration:none;color:#566072;font-size:11px;font-weight:600;border:0;background:transparent}
+:focus-visible{outline:3px solid #C9A96A;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #F1F3F7; color: #1F2B45; font-family: Montserrat, 'Segoe UI', Arial, sans-serif;">
+
+<sc-if value="{{isAccueil}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; inset: 0; display: flex; flex-direction: column;">
+<header style="background: #1F2B45; color: #FFFFFF; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;">
+<div style="display: flex; align-items: center; gap: 10px;"><img src="photos/8766a01720ebb21b77ebbfa6ba550325.png" alt="" style="height: 40px; width: auto;"><div><p style="margin: 0; font-weight: 700; font-size: 15px;">H Décoration</p><p style="margin: 0; font-size: 12px; color: #C3C9D6;">Espace pro</p></div></div>
+<a href="../site-v3-offre/#realisations" target="_blank" rel="noopener" style="color: #C9A96A; font-size: 13px; font-weight: 700; text-decoration: none;">Voir le site</a>
+</header>
+<div class="defile" style="flex: 1; overflow-y: auto; padding: 20px 16px 24px; display: flex; flex-direction: column; gap: 16px;">
+<div><p style="margin: 0; font-size: 14px; color: #566072;">Jeudi 5 novembre</p><h1 class="serif" style="margin: 4px 0 0; font-size: 30px; font-weight: 700;">Bonjour</h1></div>
+<button type="button" onClick="{{goPhotos}}" style="display: flex; align-items: center; gap: 16px; width: 100%; min-height: 88px; padding: 16px 18px; border: 0; border-radius: 14px; background: #7D6432; color: #FFFFFF; text-align: left; cursor: pointer; font-family: Montserrat, Arial, sans-serif; box-sizing: border-box;">
+<span aria-hidden="true" style="flex: none; width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+<span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 18px; font-weight: 700;">Nouvelle réalisation</span><span style="font-size: 13px; color: #F3EBDD;">Photos avant / après, en 2 minutes</span></span>
+</button>
+<a href="Inclus-BO-Pages.dc.html" class="carte" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #1F2B45;">
+<span aria-hidden="true" style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #FBF7EF; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></span>
+<span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 15px;">Pages du site</span><span style="display: block; font-size: 13px; color: #566072; margin-top: 2px;">Modifier un texte ou une photo</span></span>
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<section class="carte" aria-labelledby="m-derniere" style="display: flex; gap: 14px; align-items: center;">
+<img src="photos/e4e0c64e69bfd6f898bac397d8621e56.webp" alt="" style="width: 64px; height: 64px; object-fit: cover; border-radius: 10px; flex: none;">
+<div style="flex: 1; min-width: 0;"><h2 id="m-derniere" style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #566072;">Dernière publication</h2><p style="margin: 4px 0 0; font-weight: 700; font-size: 15px;">Rénovation d’un bar-restaurant</p><p style="margin: 2px 0 0; font-size: 13px; color: #566072;">En ligne depuis le 2 novembre</p></div>
+</section>
+</div>
+<nav aria-label="Menu de l’espace pro" style="background: #FFFFFF; border-top: 1px solid #E3E6EC; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
+<a class="onglet" href="Inclus-BO-Mobile.dc.html" aria-current="page" style="color: #1F2B45;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Accueil</a>
+<a class="onglet" href="Inclus-BO-Pages.dc.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>Pages</a>
+<a class="onglet" href="../site-v3-offre/#realisations" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Réalisations</a>
+<a class="onglet" href="Inclus-BO-Infos.dc.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>Plus</a>
+</nav>
+</div>
+</sc-if>
+
+<sc-if value="{{isFlow}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; display: flex; flex-direction: column;">
+<header style="background: #1F2B45; color: #FFFFFF; padding: 8px 12px 14px; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 6px;">
+<button type="button" class="retour" aria-label="{{backLabel}}" onClick="{{goBack}}"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+<p style="margin: 0; flex: 1; font-weight: 700; font-size: 16px;">Nouvelle réalisation</p>
+<p style="margin: 0; font-size: 13px; color: #C3C9D6; padding-right: 6px;">Étape {{stepNum}} sur 3</p>
+</div>
+<div aria-hidden="true" style="height: 4px; background: #2A3654; border-radius: 4px; overflow: hidden; margin: 0 6px;"><div style="height: 100%; width: {{progress}}%; background: #C9A96A;"></div></div>
+</header>
+
+<div class="defile" style="flex: 1; overflow-y: auto; padding: 20px 16px 24px; display: flex; flex-direction: column; gap: 18px;">
+
+<sc-if value="{{isPhotos}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h1 class="serif" style="margin: 0; font-size: 28px; font-weight: 700;">Les photos</h1>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 8px;"><div style="position: relative;"><img src="photos/5b1276eb998977f374b5f6aebc0d078c.webp" alt="Photo avant : escalier en bois verni" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; display: block;"><span style="position: absolute; left: 8px; top: 8px; background: #FFFFFF; color: #1F2B45; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase;">Avant</span></div><figcaption><label for="ph-avant" style="font-size: 13px; font-weight: 700; color: #7D6432; cursor: pointer;">Remplacer</label><input id="ph-avant" type="file" accept="image/*" capture="environment" style="position: absolute; width: 1px; height: 1px; opacity: 0;"></figcaption></figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 8px;"><div style="position: relative;"><img src="photos/3bca9b778c167198d212c628e3663f13.webp" alt="Photo après : escalier gris anthracite et bois clair" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; display: block;"><span style="position: absolute; left: 8px; top: 8px; background: #C9A96A; color: #1F2B45; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase;">Après</span></div><figcaption><label for="ph-apres" style="font-size: 13px; font-weight: 700; color: #7D6432; cursor: pointer;">Remplacer</label><input id="ph-apres" type="file" accept="image/*" capture="environment" style="position: absolute; width: 1px; height: 1px; opacity: 0;"></figcaption></figure>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<p style="margin: 0; font-size: 14px; font-weight: 700;">Autres photos <span style="font-weight: 500; color: #566072;">(facultatif)</span></p>
+<div style="display: flex; gap: 10px;">
+<img src="photos/ca25f96e79bb71ac3ec2a78087bfaacb.webp" alt="Autre vue avant" style="width: 76px; height: 76px; object-fit: cover; border-radius: 10px;">
+<img src="photos/d677541540fb07f0b84a4aa36c8584a6.webp" alt="Autre vue après" style="width: 76px; height: 76px; object-fit: cover; border-radius: 10px;">
+<label for="ph-galerie" aria-label="Ajouter des photos" style="width: 76px; height: 76px; border: 2px dashed #9AA3B5; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-sizing: border-box;"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#566072" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></label>
+<input id="ph-galerie" type="file" accept="image/*" multiple style="position: absolute; width: 1px; height: 1px; opacity: 0;">
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+<label for="ph-galerie" class="b b-ligne" style="font-size: 14px;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>Photo</label>
+<label for="ph-galerie" class="b b-ligne" style="font-size: 14px;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Galerie</label>
+</div>
+<p style="margin: 0; display: flex; gap: 10px; font-size: 13px; line-height: 1.5; color: #3A4458; background: #FFFFFF; border-radius: 10px; padding: 12px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>Les photos sont allégées automatiquement avant l’envoi : pas besoin de les retoucher, même avec peu de réseau.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{isInfos}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h1 class="serif" style="margin: 0; font-size: 28px; font-weight: 700;">Le chantier</h1>
+<div><label class="lbl" for="r-titre">Titre</label><input id="r-titre" class="champ" type="text" value="{{titre}}" onChange="{{onTitre}}"></div>
+<div><label class="lbl" for="r-commune">Commune</label><input id="r-commune" class="champ" type="text" value="{{commune}}" onChange="{{onCommune}}" autocomplete="address-level2">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+<sc-for list="{{communes}}" as="c" hint-placeholder-count="3"><button type="button" class="puce" onClick="{{c.pick}}" style="min-height: 36px; font-size: 13px; background: #FFFFFF; color: #1F2B45;">{{c.label}}</button></sc-for>
+</div></div>
+<fieldset style="border: 0; margin: 0; padding: 0;"><legend class="lbl" style="padding: 0;">Où ?</legend>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+<sc-for list="{{lieux}}" as="l" hint-placeholder-count="2"><button type="button" class="puce" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}" style="justify-content: center; border-radius: 10px; {{l.colors}}">{{l.label}}</button></sc-for>
+</div></fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0;"><legend class="lbl" style="padding: 0;">Travaux réalisés</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{travauxBtns}}" as="t" hint-placeholder-count="7"><button type="button" class="puce" aria-pressed="{{t.pressed}}" onClick="{{t.toggle}}" style="{{t.colors}}">{{t.label}}</button></sc-for>
+</div></fieldset>
+<div><label class="lbl" for="r-texte">En deux ou trois phrases</label><textarea id="r-texte" class="champ" rows="4" value="{{texte}}" onChange="{{onTexte}}" style="min-height: 120px; resize: none;"></textarea>
+<p style="margin: 6px 0 0; display: flex; justify-content: space-between; font-size: 12px; color: #566072;"><span>Astuce : le micro du clavier permet de dicter.</span><span>{{texteLen}} / 300</span></p></div>
+
+</div>
+</sc-if>
+
+<sc-if value="{{isApercu}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h1 class="serif" style="margin: 0; font-size: 28px; font-weight: 700;">Aperçu</h1>
+<article style="background: #FFFFFF; border-radius: 14px; overflow: hidden; border: 1px solid #E3E6EC;">
+<div style="position: relative;"><img src="photos/3bca9b778c167198d212c628e3663f13.webp" alt="" style="width: 100%; height: 220px; object-fit: cover; display: block;"><span style="position: absolute; left: 10px; top: 10px; background: #C9A96A; color: #1F2B45; padding: 4px 10px; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;">Avant / après</span></div>
+<div style="padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 6px;">
+<p class="serif" style="margin: 0; font-size: 21px; font-weight: 700;">{{titre}}</p>
+<p style="margin: 0; font-size: 13px; color: #566072;">{{commune}} · {{lieuLabel}} · {{travauxLabel}}</p>
+<p style="margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: #3A4458;">{{texte}}</p>
+</div>
+</article>
+<button type="button" onClick="{{toggleAccueil}}" aria-pressed="{{accueilPressed}}" style="display: flex; align-items: center; gap: 12px; width: 100%; min-height: 60px; padding: 10px 14px; border: 1px solid #E3E6EC; border-radius: 12px; background: #FFFFFF; color: #1F2B45; font-family: Montserrat, Arial, sans-serif; font-size: 15px; font-weight: 600; text-align: left; cursor: pointer; box-sizing: border-box;">
+<span style="flex: 1;">Mettre en avant sur l’accueil</span>
+<span aria-hidden="true" style="flex: none; width: 48px; height: 28px; border-radius: 999px; position: relative; {{accueilTrack}}"><span style="position: absolute; top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; {{accueilKnob}}"></span></span>
+</button>
+<button type="button" role="checkbox" aria-checked="{{accordChecked}}" onClick="{{toggleAccord}}" style="display: flex; align-items: flex-start; gap: 12px; width: 100%; min-height: 60px; padding: 12px 14px; border: 1px solid {{accordBorder}}; border-radius: 12px; background: #FFFFFF; color: #1F2B45; font-family: Montserrat, Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.45; text-align: left; cursor: pointer; box-sizing: border-box;">
+<span aria-hidden="true" style="flex: none; width: 24px; height: 24px; border-radius: 6px; border: 2px solid #1F2B45; display: flex; align-items: center; justify-content: center; box-sizing: border-box; {{accordBox}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="{{accordTick}}"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+<span>Le client m’a donné son accord écrit pour publier ces photos<span style="display: block; margin-top: 4px; font-size: 12px; font-weight: 500; color: #566072;">Obligatoire. Pas de visage, de plaque ni de numéro de rue sur les photos.</span></span>
+</button>
+<p style="margin: 0; display: flex; gap: 10px; font-size: 13px; line-height: 1.5; color: #3A4458; background: #FFFFFF; border-radius: 10px; padding: 12px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>Position GPS retirée des photos. Sur le site, seule la commune apparaît.</p>
+</div>
+</sc-if>
+
+</div>
+
+<div style="background: #FFFFFF; border-top: 1px solid #E3E6EC; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px;">
+<sc-if value="{{isApercu}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button type="button" class="b b-or" onClick="{{publish}}" disabled="{{publishDisabled}}">Publier sur le site</button>
+<sc-if value="{{publishDisabled}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 12px; text-align: center; color: #566072;">Cochez l’accord du client pour publier.</p></sc-if>
+<button type="button" class="b b-ligne" onClick="{{goAccueil}}" style="min-height: 48px; font-size: 14px;">Enregistrer en brouillon</button>
+</div>
+</sc-if>
+<sc-if value="{{notApercu}}" hint-placeholder-val="{{ true }}">
+<button type="button" class="b b-or" onClick="{{goNext}}">Continuer</button>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isPublie}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="position: absolute; inset: 0; background: #1F2B45; color: #FFFFFF; display: flex; flex-direction: column; padding: 56px 24px 24px; box-sizing: border-box; gap: 18px;">
+<div aria-hidden="true" style="width: 72px; height: 72px; border-radius: 50%; background: #C9A96A; display: flex; align-items: center; justify-content: center;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1F2B45" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<h1 class="serif" style="margin: 0; font-size: 36px; line-height: 1.1; font-weight: 700; color: #FFFFFF;">C’est en ligne</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3C9D6;">« {{titre}} » apparaît sur le site, dans les réalisations{{accueilPhrase}}.</p>
+<p style="margin: 0; font-size: 13px; color: #A9B1C2; word-break: break-all;">h-decoration.fr/realisations/{{slug}}/</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.45; color: #C3C9D6;">
+<li style="display: flex; gap: 8px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px;"><polyline points="20 6 9 17 4 12"></polyline></svg>La page est ajoutée au plan du site, lu par Google.</li>
+</ul>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+<a class="b" href="../site-v3-offre/#realisation" target="_blank" rel="noopener" style="background: #FFFFFF; color: #1F2B45;">Voir sur le site</a>
+<button type="button" class="b" onClick="{{restart}}" style="background: transparent; color: #FFFFFF; border: 1px solid #C9A96A; min-height: 48px; font-size: 15px;">Ajouter une autre réalisation</button>
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const step = st.step || 'accueil';
+    const order = ['photos', 'infos', 'apercu'];
+    const idx = order.indexOf(step);
+    const titre = typeof st.titre === 'string' ? st.titre : 'Rénovation d’un escalier';
+    const commune = typeof st.commune === 'string' ? st.commune : 'Angers';
+    const lieu = st.lieu || 'interieur';
+    const texte = typeof st.texte === 'string' ? st.texte : 'Conseil couleurs, ponçage puis peinture de l’escalier : structure gris anthracite, marches en bois clair. L’entrée paraît plus grande.';
+    const sel = Array.isArray(st.travaux) ? st.travaux : ['peinture'];
+    const accueil = st.accueil !== false;
+    const galerie = st.galerie === true;
+    const google = st.google !== false;
+    const accord = st.accord === true;
+    const versions = [
+      'Rénovation d’un escalier à ' + commune + ' : ponçage complet, sous-couche, puis laque gris anthracite sur la structure. Les marches, poncées et vernies, gardent un bois clair. L’entrée paraît plus lumineuse et plus grande.',
+      'À ' + commune + ', cet escalier en bois verni orangé a été poncé puis repeint : structure gris anthracite, marches vernies dans un bois clair. Un contraste net qui modernise toute l’entrée.'
+    ];
+    const iaFait = typeof st.ia === 'number';
+    const tousTravaux = [['peinture', 'Peinture'], ['decoration', 'Décoration'], ['sols', 'Sols'], ['placo', 'Placo'], ['beton', 'Béton ciré'], ['isolation', 'Isolation'], ['facade', 'Façade']];
+    const on = 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;';
+    const off = 'background:#FFFFFF;color:#1F2B45;';
+    const slug = (titre + ' ' + commune).toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    return {
+      isAccueil: step === 'accueil',
+      isFlow: idx !== -1,
+      isPhotos: step === 'photos',
+      isInfos: step === 'infos',
+      isApercu: step === 'apercu',
+      notApercu: step !== 'apercu',
+      isPublie: step === 'publie',
+      stepNum: idx + 1,
+      progress: Math.round(((idx + 1) / 3) * 100),
+      backLabel: idx === 0 ? 'Annuler et revenir à l’accueil' : 'Revenir à l’étape précédente',
+      goPhotos: () => this.setState({ step: 'photos' }),
+      goAccueil: () => this.setState({ step: 'accueil' }),
+      goBack: () => this.setState({ step: idx <= 0 ? 'accueil' : order[idx - 1] }),
+      goNext: () => this.setState({ step: order[Math.min(idx + 1, 2)] }),
+      publish: () => this.setState({ step: 'publie' }),
+      restart: () => this.setState({ step: 'photos', accord: false, ia: undefined }),
+      noop: () => {},
+      titre: titre,
+      commune: commune,
+      texte: texte,
+      texteLen: texte.length,
+      onTitre: (e) => this.setState({ titre: e.target.value }),
+      onCommune: (e) => this.setState({ commune: e.target.value }),
+      onTexte: (e) => this.setState({ texte: e.target.value.slice(0, 300) }),
+      communes: ['Angers', 'Avrillé', 'Beaucouzé'].map((c) => ({ label: c, pick: () => this.setState({ commune: c }) })),
+      lieux: [['interieur', 'Intérieur'], ['exterieur', 'Extérieur']].map((l) => ({
+        label: l[1], pressed: lieu === l[0] ? 'true' : 'false', colors: lieu === l[0] ? on : off,
+        pick: () => this.setState({ lieu: l[0] })
+      })),
+      lieuLabel: lieu === 'exterieur' ? 'Extérieur' : 'Intérieur',
+      travauxBtns: tousTravaux.map((t) => {
+        const actif = sel.indexOf(t[0]) !== -1;
+        return {
+          label: t[1], pressed: actif ? 'true' : 'false', colors: actif ? on : off,
+          toggle: () => this.setState({ travaux: actif ? sel.filter((x) => x !== t[0]) : sel.concat([t[0]]) })
+        };
+      }),
+      travauxLabel: tousTravaux.filter((t) => sel.indexOf(t[0]) !== -1).map((t) => t[1]).join(', ') || 'Travaux à préciser',
+      accueilPressed: accueil ? 'true' : 'false',
+      accueilTrack: accueil ? 'background:#2F6B4A;' : 'background:#9AA3B5;',
+      accueilKnob: accueil ? 'left:23px;' : 'left:3px;',
+      toggleAccueil: () => this.setState({ accueil: !accueil }),
+      galeriePressed: galerie ? 'true' : 'false',
+      galerieTrack: galerie ? 'background:#2F6B4A;' : 'background:#9AA3B5;',
+      galerieKnob: galerie ? 'left:23px;' : 'left:3px;',
+      toggleGalerie: () => this.setState({ galerie: !galerie }),
+      accueilPhrase: accueil ? ' et sur la page d’accueil' : '',
+      iaFait: iaFait,
+      redigerLabel: iaFait ? 'Proposer une autre version' : 'Rédiger avec l’IA',
+      rediger: () => { const n = iaFait ? (st.ia + 1) % versions.length : 0; this.setState({ ia: n, texte: versions[n] }); },
+      seoTitre: 'Escalier gris anthracite et bois clair à ' + commune + ' · H Décoration',
+      seoDesc: 'Ponçage, laque gris anthracite et marches en bois clair : la rénovation d’un escalier à ' + commune + ' par H Décoration, peintre-décorateur.',
+      googlePressed: google ? 'true' : 'false',
+      googleTrack: google ? 'background:#2F6B4A;' : 'background:#9AA3B5;',
+      googleKnob: google ? 'left:23px;' : 'left:3px;',
+      toggleGoogle: () => this.setState({ google: !google }),
+      googlePhrase: google ? 'Post publié sur votre fiche Google, avec la photo après.' : 'Pas de post Google pour cette réalisation.',
+      accordChecked: accord ? 'true' : 'false',
+      accordBorder: accord ? '#2F6B4A' : '#E3E6EC',
+      accordBox: accord ? 'background:#2F6B4A;border-color:#2F6B4A;' : 'background:#FFFFFF;',
+      accordTick: accord ? '' : 'visibility:hidden;',
+      toggleAccord: () => this.setState({ accord: !accord }),
+      publishDisabled: !accord,
+      slug: slug
+    };
+  }
+}
+</script>
+</body>
+</html>

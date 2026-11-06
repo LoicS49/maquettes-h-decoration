@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=1280">
+<title>Infos de l’entreprise espace pro</title>
+<script src="support.js"></script>
+<script>window.__dcLogique=function(DCLogic,StreamableLogic,React){
+
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const tel = typeof st.tel === 'string' ? st.tel : '06 77 25 24 45';
+    const email = typeof st.email === 'string' ? st.email : 'contact@h-decoration.fr';
+    const accroche = typeof st.accroche === 'string' ? st.accroche : 'Peinture, décoration, sols, placo et béton ciré, pour les particuliers comme pour les professionnels.';
+    const chiffres = tel.replace(/[^0-9+]/g, '');
+    const e164 = chiffres.charAt(0) === '0' ? '+33' + chiffres.slice(1) : chiffres;
+    const data = {
+      '@context': 'https://schema.org',
+      '@type': 'HousePainter',
+      name: 'H Décoration',
+      legalName: 'H-DECORATION',
+      url: 'https://www.h-decoration.fr/',
+      telephone: e164,
+      email: email,
+      description: accroche,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'ZA La Claverie II, 10 rue Léonard de Vinci',
+        addressLocality: 'Saint-Léger-de-Linières',
+        postalCode: '49070',
+        addressCountry: 'FR'
+      },
+      areaServed: ['Angers', 'Maine-et-Loire'],
+      openingHours: 'Mo-Fr 08:00-18:00',
+      vatID: 'FR52909669376'
+    };
+    const jours = [['Lundi', '8 h – 18 h'], ['Mardi', '8 h – 18 h'], ['Mercredi', '8 h – 18 h'], ['Jeudi', '8 h – 18 h'], ['Vendredi', '8 h – 18 h'], ['Samedi', 'Sur rendez-vous'], ['Dimanche', 'Fermé']].map((j) => ({ nom: j[0], h: j[1] }));
+    return {
+      tel: tel,
+      email: email,
+      accroche: accroche,
+      jours: jours,
+      jsonld: JSON.stringify(data, null, 2),
+      onTel: (e) => this.setState({ tel: e.target.value, saved: false }),
+      onMail: (e) => this.setState({ email: e.target.value, saved: false }),
+      onAccroche: (e) => this.setState({ accroche: e.target.value, saved: false }),
+      saved: st.saved === true,
+      enregistrer: () => this.setState({ saved: true }),
+      noop: () => {}
+    };
+  }
+}
+
+;return (typeof Component!=="undefined"&&Component)||undefined;};</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<style>
+body{margin:0;background:#F1F3F7;color:#1F2B45;font-family:Montserrat,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7D6432}a:hover{color:#1F2B45}
+.serif{font-family:"PT Serif",Georgia,"Times New Roman",serif}
+.side a{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 14px;border-radius:8px;color:#C3C9D6;text-decoration:none;font-size:14px;font-weight:600}
+.side a:hover{background:#2A3654;color:#FFFFFF}
+.side a[aria-current="page"]{background:#2A3654;color:#FFFFFF}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:8px;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:14px;text-decoration:none;box-sizing:border-box;cursor:pointer;white-space:nowrap}
+.b-or{background:#7D6432;color:#FFFFFF;border:1px solid #7D6432}.b-or:hover{background:#1F2B45;border-color:#1F2B45}
+.b-ligne{background:#FFFFFF;color:#1F2B45;border:1px solid #9AA3B5}.b-ligne:hover{border-color:#1F2B45}
+.panneau{background:#FFFFFF;border:1px solid #E3E6EC;border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;gap:18px}
+.titre-p{margin:0;font-size:18px;font-weight:700;color:#1F2B45}
+.lbl{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#1F2B45}
+.champ{width:100%;box-sizing:border-box;min-height:46px;padding:10px 12px;border:1px solid #9AA3B5;border-radius:8px;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,Arial,sans-serif;font-size:15px}
+.champ[readonly]{background:#F7F8FB;color:#3A4458}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 20px}
+.puce{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:#F1F3F7;font-size:13px;font-weight:600}
+.ph{background:#FBF7EF;color:#6E5729;border-bottom:1px dashed #9F8045;padding:0 4px}
+.a-fournir{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;background:#FBF1E3;color:#9A5B00;font-size:11px;font-weight:700;letter-spacing:.04em}
+.ok{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#E7F3EC;color:#2F6B4A;font-size:12px;font-weight:700}
+:focus-visible{outline:3px solid #C9A96A;outline-offset:2px}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; min-height: 100vh; background: #F1F3F7;">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 280px; background: #1F2B45; color: #FFFFFF; padding: 24px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px;">
+<div style="display: flex; align-items: center; gap: 12px; padding: 0 6px;"><img src="photos/8766a01720ebb21b77ebbfa6ba550325.png" alt="" style="height: 48px; width: auto;"><div><p style="margin: 0; font-weight: 700;">H Décoration</p><p style="margin: 0; font-size: 12px; color: #C3C9D6;">Espace pro</p></div></div>
+<nav aria-label="Menu de l’espace pro" style="display: flex; flex-direction: column; gap: 4px;">
+<a href="Inclus-BO-Pages.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>Pages du site</a>
+<a href="Inclus-BO-Mobile.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Réalisations</a>
+<a aria-current="page" href="Inclus-BO-Infos.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Infos de l’entreprise</a>
+<a href="Inclus-BO-Infos.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Comptes et sécurité</a>
+</nav>
+</aside>
+
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px;">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;">
+<div><p style="margin: 0; font-size: 14px; color: #566072;">Saisies une seule fois, reprises partout sur le site</p><h1 class="serif" style="margin: 4px 0 0; font-size: 36px; font-weight: 700;">Infos de l’entreprise</h1></div>
+<button type="button" class="b b-or" onClick="{{enregistrer}}">Enregistrer</button>
+</div>
+
+<sc-if value="{{saved}}" hint-placeholder-val="{{ false }}">
+<p role="status" style="margin: 0; display: flex; align-items: center; gap: 10px; background: #1F2B45; color: #FFFFFF; border-radius: 10px; padding: 12px 16px; font-size: 14px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Enregistré. L’en-tête, le pied de page, la page Contact et les données pour Google sont à jour.</p>
+</sc-if>
+
+<div style="display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start;">
+
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px;">
+
+<section class="panneau" aria-labelledby="s-coord">
+<h2 id="s-coord" class="titre-p">Coordonnées</h2>
+<div class="grille">
+<div><label class="lbl" for="i-nom">Nom affiché</label><input id="i-nom" class="champ" type="text" value="H Décoration" readonly></div>
+<div><label class="lbl" for="i-tel">Téléphone</label><input id="i-tel" class="champ" type="tel" value="{{tel}}" onChange="{{onTel}}"></div>
+<div><label class="lbl" for="i-mail">E-mail</label><input id="i-mail" class="champ" type="email" value="{{email}}" onChange="{{onMail}}"></div>
+<div><label class="lbl" for="i-fb">Page Facebook</label><input id="i-fb" class="champ" type="url" placeholder="facebook.com/…"></div>
+</div>
+<div><label class="lbl" for="i-adr">Adresse</label><input id="i-adr" class="champ" type="text" value="ZA La Claverie II, 10 rue Léonard de Vinci, 49070 Saint-Léger-de-Linières"></div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #566072;">Utilisez exactement la même adresse que sur la fiche Google : c’est ce qui aide Google à vous situer.</p>
+</section>
+
+<section class="panneau" aria-labelledby="s-horaires">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h2 id="s-horaires" class="titre-p">Horaires</h2><span class="a-fournir">À confirmer</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+<sc-for list="{{jours}}" as="j" hint-placeholder-count="7">
+<div style="border: 1px solid #E3E6EC; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px;"><p style="margin: 0; font-weight: 700; font-size: 14px;">{{j.nom}}</p><p style="margin: 0; font-size: 14px; color: #3A4458; font-variant-numeric: tabular-nums;">{{j.h}}</p></div>
+</sc-for>
+</div>
+</section>
+
+<section class="panneau" aria-labelledby="s-zone">
+<h2 id="s-zone" class="titre-p">Zone d’intervention</h2>
+<p style="margin: 0; font-size: 14px; color: #3A4458;">Angers et tout le Maine-et-Loire (49). Communes citées sur le site :</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<span class="puce">Angers</span><span class="puce">Avrillé</span><span class="puce">Beaucouzé</span><span class="puce">Bouchemaine</span><span class="puce">Saint-Léger-de-Linières</span><span class="puce">Les Ponts-de-Cé</span><span class="puce">Trélazé</span><span class="puce">Le Lion-d’Angers</span><span class="puce">Soucelles</span>
+<button type="button" class="b b-ligne" style="min-height: 34px; padding: 0 12px; font-size: 13px; border-radius: 999px;" onClick="{{noop}}">+ Ajouter</button>
+</div>
+</section>
+
+<section class="panneau" aria-labelledby="s-textes">
+<h2 id="s-textes" class="titre-p">Textes clés</h2>
+<div><label class="lbl" for="i-accroche">Accroche de l’accueil</label><textarea id="i-accroche" class="champ" rows="2" value="{{accroche}}" onChange="{{onAccroche}}" style="resize: vertical;"></textarea></div>
+<div class="grille">
+<div><label class="lbl" for="i-delai">Délai de réponse annoncé</label><input id="i-delai" class="champ" type="text" value="48 h"></div>
+<div><label class="lbl" for="i-exp">Expérience</label><input id="i-exp" class="champ" type="text" value="20 ans dans le bâtiment"></div>
+</div>
+</section>
+
+<section class="panneau" aria-labelledby="s-legal">
+<h2 id="s-legal" class="titre-p">Mentions légales</h2>
+<div class="grille">
+<div><label class="lbl" for="i-rs">Raison sociale et forme</label><input id="i-rs" class="champ" type="text" value="H-DECORATION, SAS au capital de 1 000 €" readonly></div>
+<div><label class="lbl" for="i-siren">SIREN et RCS</label><input id="i-siren" class="champ" type="text" value="909 669 376 RCS Angers" readonly></div>
+<div><label class="lbl" for="i-tva">N° de TVA</label><input id="i-tva" class="champ" type="text" value="FR52 909 669 376" readonly></div>
+<div><label class="lbl" for="i-dir">Directeur de la publication <span class="a-fournir">À confirmer</span></label><input id="i-dir" class="champ" type="text" placeholder="Président de la SAS"></div>
+<div><label class="lbl" for="i-assur">Assurance décennale <span class="a-fournir">À fournir</span></label><input id="i-assur" class="champ" type="text" placeholder="Assureur, n° de contrat, zone couverte"></div>
+<div><label class="lbl" for="i-med">Médiateur de la consommation <span class="a-fournir">À désigner</span></label><input id="i-med" class="champ" type="text" placeholder="Nom et site du médiateur"></div>
+</div>
+</section>
+
+<section class="panneau" aria-labelledby="s-comptes">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h2 id="s-comptes" class="titre-p">Comptes et sécurité</h2><span style="font-size: 13px; color: #566072;">2 comptes sur 3</span></div>
+<div style="display: flex; flex-direction: column;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 12px 0; border-top: 1px solid #EEF0F3;"><div style="flex: 1 1 220px;"><p style="margin: 0; font-weight: 700;">Compte gérant</p><p style="margin: 2px 0 0; font-size: 13px; color: #566072;">Dernière connexion : aujourd’hui, depuis un téléphone</p></div><span class="ok"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Double authentification</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 12px 0; border-top: 1px solid #EEF0F3;"><div style="flex: 1 1 220px;"><p style="margin: 0; font-weight: 700;">Compte bureau</p><p style="margin: 2px 0 0; font-size: 13px; color: #566072;">Dernière connexion : 3 novembre, depuis un ordinateur</p></div><span class="ok"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Double authentification</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;"><button type="button" class="b b-ligne" onClick="{{noop}}">Inviter un compte</button><button type="button" class="b b-ligne" onClick="{{noop}}">Historique des connexions</button></div>
+</section>
+</div>
+
+<aside aria-label="Aperçu des infos sur le site" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+<section class="panneau" aria-labelledby="s-ou" style="gap: 14px;">
+<h2 id="s-ou" class="titre-p">Où ces infos apparaissent</h2>
+<div style="border: 1px solid #E3E6EC; border-radius: 10px; overflow: hidden;">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; background: #FFFFFF; border-bottom: 1px solid #E3E6EC;"><img src="photos/25c92c92434e3bbd5e58a445370129f2.png" alt="" style="height: 34px; width: auto;"><span style="font-weight: 700; font-size: 14px; white-space: nowrap;">{{tel}}</span></div>
+<p style="margin: 0; padding: 8px 14px; font-size: 12px; color: #566072; background: #F7F8FB;">En-tête du site, sur toutes les pages</p>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+<li style="display: flex; gap: 10px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>Bouton d’appel fixe sur mobile</li>
+<li style="display: flex; gap: 10px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>Pied de page et page Contact</li>
+<li style="display: flex; gap: 10px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>Mentions légales</li>
+<li style="display: flex; gap: 10px;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>Données lues par Google et les assistants IA</li>
+</ul>
+</section>
+<section class="panneau" aria-labelledby="s-jsonld" style="gap: 10px;">
+<h2 id="s-jsonld" class="titre-p">Données pour Google</h2>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #566072;">Générées automatiquement à partir des champs ci-contre (format JSON-LD). Le fichier llms.txt destiné aux assistants IA est produit de la même façon.</p>
+<pre style="margin: 0; padding: 14px; border-radius: 8px; background: #172036; color: #E4E8F0; font-size: 12px; line-height: 1.55; overflow-x: auto; white-space: pre;"><code>{{jsonld}}</code></pre>
+</section>
+</aside>
+
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1450}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const tel = typeof st.tel === 'string' ? st.tel : '06 77 25 24 45';
+    const email = typeof st.email === 'string' ? st.email : 'contact@h-decoration.fr';
+    const accroche = typeof st.accroche === 'string' ? st.accroche : 'Peinture, décoration, sols, placo et béton ciré, pour les particuliers comme pour les professionnels.';
+    const chiffres = tel.replace(/[^0-9+]/g, '');
+    const e164 = chiffres.charAt(0) === '0' ? '+33' + chiffres.slice(1) : chiffres;
+    const data = {
+      '@context': 'https://schema.org',
+      '@type': 'HousePainter',
+      name: 'H Décoration',
+      legalName: 'H-DECORATION',
+      url: 'https://www.h-decoration.fr/',
+      telephone: e164,
+      email: email,
+      description: accroche,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'ZA La Claverie II, 10 rue Léonard de Vinci',
+        addressLocality: 'Saint-Léger-de-Linières',
+        postalCode: '49070',
+        addressCountry: 'FR'
+      },
+      areaServed: ['Angers', 'Maine-et-Loire'],
+      openingHours: 'Mo-Fr 08:00-18:00',
+      vatID: 'FR52909669376'
+    };
+    const jours = [['Lundi', '8 h – 18 h'], ['Mardi', '8 h – 18 h'], ['Mercredi', '8 h – 18 h'], ['Jeudi', '8 h – 18 h'], ['Vendredi', '8 h – 18 h'], ['Samedi', 'Sur rendez-vous'], ['Dimanche', 'Fermé']].map((j) => ({ nom: j[0], h: j[1] }));
+    return {
+      tel: tel,
+      email: email,
+      accroche: accroche,
+      jours: jours,
+      jsonld: JSON.stringify(data, null, 2),
+      onTel: (e) => this.setState({ tel: e.target.value, saved: false }),
+      onMail: (e) => this.setState({ email: e.target.value, saved: false }),
+      onAccroche: (e) => this.setState({ accroche: e.target.value, saved: false }),
+      saved: st.saved === true,
+      enregistrer: () => this.setState({ saved: true }),
+      noop: () => {}
+    };
+  }
+}
+</script>
+</body>
+</html>

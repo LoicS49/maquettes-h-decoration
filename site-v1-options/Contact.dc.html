@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style id="entete-mobile">@media (max-width:760px){header>.wrap{display:grid !important;grid-template-columns:auto 1fr;align-items:center;gap:4px 12px !important;padding-top:8px !important;padding-bottom:2px !important}header>.wrap>a:first-child img{height:50px !important}header>.wrap>div{grid-row:1;grid-column:2;justify-self:end;flex-wrap:nowrap !important;gap:8px !important}header>.wrap>div>a[href^="tel:"]{font-size:0 !important;gap:0 !important;width:40px;height:40px;justify-content:center;border:1px solid #E3E6EC;border-radius:2px;box-sizing:border-box}header>.wrap>div>.btn{min-height:40px !important;padding:0 14px !important;font-size:11px !important;letter-spacing:.06em !important}header nav.nav{grid-row:2;grid-column:1/-1;flex-wrap:nowrap !important;overflow-x:auto;gap:0 22px !important;font-size:12px !important;scrollbar-width:none}header nav.nav::-webkit-scrollbar{display:none}header nav.nav a{flex:none;white-space:nowrap}}</style>
+<title>Demande de devis H Décoration</title>
+<script src="support.js"></script>
+<script>window.__dcLogique=function(DCLogic,StreamableLogic,React){
+
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const sel = Array.isArray(st.travaux) ? st.travaux : ['peinture-int'];
+    const sent = st.sent === true;
+    const options = [
+      ['peinture-int', 'Peinture intérieure'],
+      ['peinture-ext', 'Peinture extérieure, façade'],
+      ['deco', 'Décoration'],
+      ['sols', 'Revêtements de sol'],
+      ['placo', 'Placo, cloisons'],
+      ['beton', 'Béton ciré'],
+      ['autre', 'Autre']
+    ];
+    const travauxBtns = options.map((o) => {
+      const on = sel.indexOf(o[0]) !== -1;
+      return {
+        label: o[1],
+        check: on,
+        pressed: on ? 'true' : 'false',
+        colors: on ? 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;' : 'background:#FFFFFF;color:#1F2B45;',
+        toggle: () => this.setState({ travaux: on ? sel.filter((x) => x !== o[0]) : sel.concat([o[0]]) })
+      };
+    });
+    const noms = options.filter((o) => sel.indexOf(o[0]) !== -1).map((o) => o[1].toLowerCase());
+    return {
+      travauxBtns: travauxBtns,
+      formVisible: !sent,
+      sent: sent,
+      recapTravaux: noms.length ? ' pour votre projet (' + noms.join(', ') + ')' : '',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false, travaux: ['peinture-int'] })
+    };
+  }
+}
+
+;return (typeof Component!=="undefined"&&Component)||undefined;};</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7D6432}a:hover{color:#1F2B45}
+.serif{font-family:"PT Serif",Georgia,"Times New Roman",serif}
+.wrap{max-width:1280px;margin:0 auto;padding-left:32px;padding-right:32px;box-sizing:border-box}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-sizing:border-box;transition:background-color .15s ease,color .15s ease,border-color .15s ease;white-space:nowrap;cursor:pointer}
+.btn-or{background:#7D6432;color:#FFFFFF;border:1px solid #7D6432}.btn-or:hover{background:#1F2B45;color:#FFFFFF;border-color:#1F2B45}
+.btn-ligne{background:transparent;color:#1F2B45;border:1px solid #1F2B45}.btn-ligne:hover{background:#1F2B45;color:#FFFFFF}
+.nav a{color:#1F2B45;text-decoration:none;padding:10px 0;border-bottom:2px solid transparent}.nav a:hover{color:#7D6432;border-bottom-color:#9F8045}
+.nav a[aria-current="page"]{color:#7D6432;border-bottom-color:#9F8045}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7D6432}
+.lbl{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:#1F2B45}
+.lbl small{font-weight:500;color:#566072;font-size:13px}
+.champ{width:100%;box-sizing:border-box;min-height:52px;padding:12px 14px;border:1px solid #9AA3B5;border-radius:2px;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,Arial,sans-serif;font-size:16px}
+.champ:focus{border-color:#1F2B45;outline:3px solid #C9A96A;outline-offset:0}
+.choix{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid #9AA3B5;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+.radio{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid #9AA3B5;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+.radio input{accent-color:#7D6432;width:18px;height:18px;margin:0}
+.ph{background:#FBF7EF;color:#6E5729;border-bottom:1px dashed #9F8045;padding:0 4px}
+.pied a{color:#C3C9D6;text-decoration:none}.pied a:hover{color:#FFFFFF}
+:focus-visible{outline:3px solid #C9A96A;outline-offset:2px}
+@media (max-width:760px){.wrap{padding-left:20px;padding-right:20px}.h1{font-size:42px !important}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #1F2B45; min-height: 100vh;">
+
+<header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #E3E6EC;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding-top: 12px; padding-bottom: 12px;">
+<a href="Main.dc.html" aria-label="H Décoration, retour à l’accueil" style="display: flex; align-items: center;">
+<img src="photos/25c92c92434e3bbd5e58a445370129f2.png" alt="H Décoration" style="height: 68px; width: auto; display: block;">
+</a>
+<nav class="nav" aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 4px 32px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;">
+<a href="Service.dc.html">Prestations</a>
+<a href="Realisations.dc.html">Réalisations</a>
+<a href="Conseils.dc.html">Conseils</a>
+<a href="Main.dc.html#presentation">Présentation</a>
+<a href="Contact.dc.html" aria-current="page">Contact</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;">
+<a href="tel:+33677252445" style="display: flex; align-items: center; gap: 8px; color: #1F2B45; font-weight: 700; font-size: 17px; text-decoration: none; white-space: nowrap;">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+06 77 25 24 45</a>
+</div>
+</div>
+</header>
+
+<main>
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 64px; padding-top: 64px; padding-bottom: 112px;">
+
+<section aria-labelledby="titre-devis" style="flex: 1.5 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+<p class="eyebrow" style="margin: 0;">Devis gratuit</p>
+<h1 id="titre-devis" class="serif h1" style="margin: 0; font-size: 64px; line-height: 1.04; font-weight: 700;"><span style="font-style: italic; font-weight: 400;">Demander</span> un devis</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #3A4458; max-width: 36em;">Quelques informations suffisent. Nous vous rappelons sous 48 h (jours ouvrés) pour en parler et fixer une visite.</p>
+
+<sc-if value="{{formVisible}}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{onSubmit}}" style="display: flex; flex-direction: column; gap: 28px; position: relative;">
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+<legend class="lbl" style="padding: 0;">Vos travaux <small>(un ou plusieurs)</small></legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<sc-for list="{{travauxBtns}}" as="t" hint-placeholder-count="7">
+<button type="button" class="choix" aria-pressed="{{t.pressed}}" onClick="{{t.toggle}}" style="{{t.colors}}">
+<sc-if value="{{t.check}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></sc-if>
+{{t.label}}</button>
+</sc-for>
+</div>
+</fieldset>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px 24px;">
+<div><label class="lbl" for="d-nom">Nom et prénom</label><input id="d-nom" class="champ" type="text" name="nom" autocomplete="name" required></div>
+<div><label class="lbl" for="d-tel">Téléphone</label><input id="d-tel" class="champ" type="tel" name="telephone" autocomplete="tel" inputmode="tel" required placeholder="06 12 34 56 78"></div>
+<div><label class="lbl" for="d-mail">E-mail <small>(facultatif)</small></label><input id="d-mail" class="champ" type="email" name="email" autocomplete="email"></div>
+<div><label class="lbl" for="d-commune">Commune du chantier</label><input id="d-commune" class="champ" type="text" name="commune" autocomplete="address-level2" required placeholder="Angers, Avrillé, Beaucouzé…"></div>
+</div>
+<div><label class="lbl" for="d-msg">Votre projet <small>(facultatif)</small></label><textarea id="d-msg" class="champ" name="message" rows="5" placeholder="Pièces concernées, surface approximative, état actuel, délais souhaités…" style="min-height: 140px; resize: vertical;"></textarea></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;">
+<label for="d-photos" class="btn btn-ligne" style="text-transform: none; letter-spacing: 0; font-size: 15px;">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+Ajouter des photos</label>
+<input id="d-photos" type="file" name="photos" accept="image/*" multiple style="position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden;">
+<p style="margin: 0; font-size: 14px; color: #566072;">Facultatif, jusqu’à 5 photos : elles nous aident à préparer la visite.</p>
+</div>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+<legend class="lbl" style="padding: 0;">Quand préférez-vous être rappelé ? <small>(facultatif)</small></legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+<label class="radio"><input type="radio" name="rappel" value="matin">Le matin</label>
+<label class="radio"><input type="radio" name="rappel" value="apres-midi">L’après-midi</label>
+<label class="radio"><input type="radio" name="rappel" value="indifferent">Peu importe</label>
+</div>
+</fieldset>
+<div aria-hidden="true" style="position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden;">
+<label for="d-site">Ne pas remplir ce champ</label>
+<input id="d-site" type="text" name="site_web" tabindex="-1" autocomplete="off">
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #566072; max-width: 44em;">Vos coordonnées servent uniquement à répondre à votre demande. Nous les conservons <span class="ph">[3 ans]</span> au plus, puis elles sont supprimées. Vous pouvez demander à les consulter ou à les effacer à tout moment. <a href="#">Politique de confidentialité</a></p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
+<button type="submit" class="btn btn-or" style="min-height: 56px; padding: 0 32px; font-size: 14px;">Envoyer ma demande</button>
+<p style="margin: 0; font-size: 14px; color: #566072;">Ou appelez le <a href="tel:+33677252445" style="font-weight: 700; white-space: nowrap;">06 77 25 24 45</a></p>
+</div>
+</form>
+</sc-if>
+
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div role="status" style="border: 1px solid #9F8045; background: #FBF7EF; padding: 40px; display: flex; flex-direction: column; gap: 18px;">
+<div aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #1F2B45; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<h2 class="serif" style="margin: 0; font-size: 34px; font-weight: 700;">Merci, votre demande est bien partie</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #3A4458;">Nous vous rappelons sous 48 h au numéro indiqué{{recapTravaux}}. Si vous avez donné votre e-mail, une confirmation vient de vous être envoyée.</p>
+<p style="margin: 0; font-size: 15px; color: #3A4458;">Une urgence ? Appelez le <a href="tel:+33677252445" style="font-weight: 700; white-space: nowrap;">06 77 25 24 45</a>.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px;"><a class="btn btn-or" href="Realisations.dc.html">Voir nos réalisations</a><button type="button" class="btn btn-ligne" onClick="{{reset}}">Faire une autre demande</button></div>
+</div>
+</sc-if>
+</section>
+
+<aside aria-label="Nos coordonnées" style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<div style="background: #1F2B45; color: #FFFFFF; padding: 36px; display: flex; flex-direction: column; gap: 14px;">
+<p class="eyebrow" style="margin: 0; color: #C9A96A;">Par téléphone</p>
+<a href="tel:+33677252445" style="color: #FFFFFF; font-size: 34px; font-weight: 700; text-decoration: none; white-space: nowrap;">06 77 25 24 45</a>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C3C9D6;">Du lundi au vendredi, <span class="ph" style="background: #2A3654; color: #FFFFFF; border-bottom-color: #C9A96A;">[horaires à confirmer]</span>. Si nous sommes sur un chantier, laissez un message : nous vous rappelons.</p>
+</div>
+<div style="border: 1px solid #E3E6EC; padding: 28px 32px; display: flex; flex-direction: column; gap: 22px;">
+<div style="display: flex; gap: 14px;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<div><p style="margin: 0 0 4px; font-weight: 700;">Par e-mail</p><a href="mailto:contact@h-decoration.fr" style="font-size: 15px;">contact@h-decoration.fr</a></div></div>
+<div style="display: flex; gap: 14px;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<div><p style="margin: 0 0 4px; font-weight: 700;">Nos locaux</p><address style="font-style: normal; font-size: 15px; line-height: 1.6; color: #3A4458;">ZA La Claverie II, 10 rue Léonard de Vinci<br>49070 Saint-Léger-de-Linières</address>
+<a href="https://www.openstreetmap.org/search?query=10%20rue%20L%C3%A9onard%20de%20Vinci%2049070%20Saint-L%C3%A9ger-de-Lini%C3%A8res" target="_blank" rel="noopener" style="display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 700;">Voir l’itinéraire</a></div></div>
+<div style="display: flex; gap: 14px;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+<div><p style="margin: 0 0 4px; font-weight: 700;">Zone d’intervention</p><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3A4458;">Angers et tout le Maine-et-Loire : Avrillé, Beaucouzé, Bouchemaine, Les Ponts-de-Cé, Trélazé, Le Lion-d’Angers…</p></div></div>
+</div>
+<figure style="margin: 0;">
+<img src="photos/57175b492007c166475f3c251b003788.webp" alt="Les deux véhicules utilitaires de H Décoration" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+<figcaption style="margin-top: 10px; font-size: 13px; color: #566072;">Nos véhicules sont reconnaissables sur les routes de l’Anjou.</figcaption>
+</figure>
+</aside>
+
+</div>
+</main>
+
+<footer class="pied" style="background: #172036; color: #C3C9D6;">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding-top: 72px; padding-bottom: 48px; font-size: 14px; line-height: 1.7;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<img src="photos/8766a01720ebb21b77ebbfa6ba550325.png" alt="H Décoration" style="height: 84px; width: auto; align-self: flex-start;">
+<p style="margin: 0;">Artisans peintres-décorateurs à Saint-Léger-de-Linières, pour les particuliers et les professionnels d’Angers et du Maine-et-Loire.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0 0 6px; color: #FFFFFF; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;">Prestations</p>
+<a href="Service.dc.html">Peinture intérieure</a><a href="Service.dc.html">Décoration intérieure</a><a href="Service.dc.html">Revêtements de sol</a><a href="Service.dc.html">Placo, cloisons et plafonds</a><a href="Service.dc.html">Béton ciré</a><a href="Service.dc.html">Rénovation extérieure</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0 0 6px; color: #FFFFFF; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;">H Décoration</p>
+<a href="Realisations.dc.html">Réalisations</a><a href="Conseils.dc.html">Conseils</a><a href="Main.dc.html#presentation">Présentation</a><a href="Contact.dc.html">Demander un devis</a><a href="#">Mentions légales</a><a href="#">Politique de confidentialité</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0 0 6px; color: #FFFFFF; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;">Coordonnées</p>
+<address style="font-style: normal;">ZA La Claverie II<br>10 rue Léonard de Vinci<br>49070 Saint-Léger-de-Linières</address>
+<a href="tel:+33677252445" style="color: #FFFFFF; font-weight: 700;">06 77 25 24 45</a>
+<a href="mailto:contact@h-decoration.fr">contact@h-decoration.fr</a>
+</div>
+</div>
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 24px; padding-bottom: 32px; border-top: 1px solid #2A3654; font-size: 12px; color: #A9B1C2;">
+<p style="margin: 0;">H-DECORATION, SAS au capital de 1 000 € · RCS Angers 909 669 376 · TVA FR52 909 669 376</p>
+<p style="margin: 0;">Aucun cookie publicitaire</p>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const sel = Array.isArray(st.travaux) ? st.travaux : ['peinture-int'];
+    const sent = st.sent === true;
+    const options = [
+      ['peinture-int', 'Peinture intérieure'],
+      ['peinture-ext', 'Peinture extérieure, façade'],
+      ['deco', 'Décoration'],
+      ['sols', 'Revêtements de sol'],
+      ['placo', 'Placo, cloisons'],
+      ['beton', 'Béton ciré'],
+      ['autre', 'Autre']
+    ];
+    const travauxBtns = options.map((o) => {
+      const on = sel.indexOf(o[0]) !== -1;
+      return {
+        label: o[1],
+        check: on,
+        pressed: on ? 'true' : 'false',
+        colors: on ? 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;' : 'background:#FFFFFF;color:#1F2B45;',
+        toggle: () => this.setState({ travaux: on ? sel.filter((x) => x !== o[0]) : sel.concat([o[0]]) })
+      };
+    });
+    const noms = options.filter((o) => sel.indexOf(o[0]) !== -1).map((o) => o[1].toLowerCase());
+    return {
+      travauxBtns: travauxBtns,
+      formVisible: !sent,
+      sent: sent,
+      recapTravaux: noms.length ? ' pour votre projet (' + noms.join(', ') + ')' : '',
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false, travaux: ['peinture-int'] })
+    };
+  }
+}
+</script>
+</body>
+</html>

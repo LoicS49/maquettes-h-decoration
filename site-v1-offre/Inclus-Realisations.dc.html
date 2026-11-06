@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style id="entete-mobile">@media (max-width:760px){header>.wrap{display:grid !important;grid-template-columns:auto 1fr;align-items:center;gap:4px 12px !important;padding-top:8px !important;padding-bottom:2px !important}header>.wrap>a:first-child img{height:50px !important}header>.wrap>div{grid-row:1;grid-column:2;justify-self:end;flex-wrap:nowrap !important;gap:8px !important}header>.wrap>div>a[href^="tel:"]{font-size:0 !important;gap:0 !important;width:40px;height:40px;justify-content:center;border:1px solid #E3E6EC;border-radius:2px;box-sizing:border-box}header>.wrap>div>.btn{min-height:40px !important;padding:0 14px !important;font-size:11px !important;letter-spacing:.06em !important}header nav.nav{grid-row:2;grid-column:1/-1;flex-wrap:nowrap !important;overflow-x:auto;gap:0 22px !important;font-size:12px !important;scrollbar-width:none}header nav.nav::-webkit-scrollbar{display:none}header nav.nav a{flex:none;white-space:nowrap}}</style>
+<title>Réalisations H Décoration</title>
+<script src="support.js"></script>
+<script>window.__dcLogique=function(DCLogic,StreamableLogic,React){
+
+class Component extends DCLogic {
+  items() {
+    return [
+      { id: 'bar', title: 'Rénovation d’un bar-restaurant sur deux étages', ville: 'Angers', cat: 'interieur', client: 'Professionnel', services: ['peinture', 'decoration'], label: 'Peinture, décoration', year: '2022', img: 'photos/e4e0c64e69bfd6f898bac397d8621e56.webp', ba: false },
+      { id: 'pole', title: 'Sols et peinture d’un pôle santé', ville: 'Le Lion-d’Angers', cat: 'interieur', client: 'Professionnel', services: ['sols', 'peinture'], label: 'Sols, peinture', year: '2023', img: 'photos/774dadc47394f182f760f8a1816344e4.webp', ba: false },
+      { id: 'toile', title: 'Toile tendue et dalles de moquette en salles de réunion', ville: 'Angers', cat: 'interieur', client: 'Professionnel', services: ['decoration', 'sols'], label: 'Décoration, sols', year: '2023', img: 'photos/e62dcd2d3e23a53f79ce511ad9d33cc9.webp', ba: false },
+      { id: 'facade', title: 'Façade en bardage douglas et crépi blanc', ville: 'Soucelles', cat: 'exterieur', client: 'Particulier', services: ['exterieur'], label: 'Rénovation extérieure', year: '2023', img: 'photos/a53eca7a3a1c31fc76ef5b330669d40e.webp', ba: false },
+      { id: 'pierre', title: 'Maison en pierre rénovée dans l’ancien', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture', 'placo', 'sols'], label: 'Peinture, placo, sols', year: '2023', img: 'photos/c15eb6ad24f8ec0d244678ec2a0ecd65.webp', ba: false },
+      { id: 'garage', title: 'Isolation intérieure d’un garage', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['placo'], label: 'Placo, isolation', year: '2023', img: 'photos/fa02e9aceb7ee56d4aa737d1775c01ac.webp', ba: false },
+      { id: 'escalier', title: 'Rénovation d’un escalier', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture'], label: 'Peinture', year: '2022', img: 'photos/3bca9b778c167198d212c628e3663f13.webp', ba: true },
+      { id: 'couloir', title: 'Couloir d’une maison du 19e siècle', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture', 'decoration'], label: 'Peinture, revêtements muraux', year: '2022', img: 'photos/d44fb1073b96694c90c9cf60f1b6e830.webp', ba: false },
+      { id: 'moderne', title: 'Rénovation complète d’une maison moderne', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture', 'decoration'], label: 'Peinture, décoration', year: '2022', img: 'photos/f518e11ab59c6afacd31c6b73595de35.webp', ba: false }
+    ];
+  }
+  renderVals() {
+    const st = this.state || {};
+    const cat = st.cat || 'toutes';
+    const service = st.service || 'toutes';
+    const ville = st.ville || 'toutes';
+    const shown = this.items()
+      .filter((r) => cat === 'toutes' || r.cat === cat)
+      .filter((r) => service === 'toutes' || r.services.indexOf(service) !== -1)
+      .filter((r) => ville === 'toutes' || r.ville === ville)
+      .map((r) => Object.assign({}, r, { catLabel: r.cat === 'exterieur' ? 'Extérieur' : 'Intérieur' }));
+    const choix = [['toutes', 'Tous les chantiers'], ['interieur', 'Intérieur'], ['exterieur', 'Extérieur']];
+    const catBtns = choix.map((c) => ({
+      label: c[1],
+      pressed: cat === c[0] ? 'true' : 'false',
+      colors: cat === c[0] ? 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;' : 'background:#FFFFFF;color:#1F2B45;',
+      pick: () => this.setState({ cat: c[0] })
+    }));
+    const n = shown.length;
+    return {
+      catBtns: catBtns,
+      shown: shown,
+      service: service,
+      ville: ville,
+      hasResults: n > 0,
+      empty: n === 0,
+      count: n === 0 ? 'Aucune réalisation' : (n === 1 ? '1 réalisation' : n + ' réalisations'),
+      onService: (e) => this.setState({ service: e.target.value }),
+      onVille: (e) => this.setState({ ville: e.target.value }),
+      reset: () => this.setState({ cat: 'toutes', service: 'toutes', ville: 'toutes' })
+    };
+  }
+}
+
+;return (typeof Component!=="undefined"&&Component)||undefined;};</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7D6432}a:hover{color:#1F2B45}
+.serif{font-family:"PT Serif",Georgia,"Times New Roman",serif}
+.wrap{max-width:1280px;margin:0 auto;padding-left:32px;padding-right:32px;box-sizing:border-box}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-sizing:border-box;transition:background-color .15s ease,color .15s ease,border-color .15s ease;white-space:nowrap}
+.btn-or{background:#7D6432;color:#FFFFFF;border:1px solid #7D6432}.btn-or:hover{background:#1F2B45;color:#FFFFFF;border-color:#1F2B45}
+.btn-ligne{background:transparent;color:#1F2B45;border:1px solid #1F2B45}.btn-ligne:hover{background:#1F2B45;color:#FFFFFF}
+.btn-clair{background:#C9A96A;color:#1F2B45;border:1px solid #C9A96A}.btn-clair:hover{background:#FFFFFF;color:#1F2B45;border-color:#FFFFFF}
+.nav a{color:#1F2B45;text-decoration:none;padding:10px 0;border-bottom:2px solid transparent}.nav a:hover{color:#7D6432;border-bottom-color:#9F8045}
+.nav a[aria-current="page"]{color:#7D6432;border-bottom-color:#9F8045}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7D6432}
+.carte{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.carte .vis{overflow:hidden}.carte img{transition:transform .5s ease}.carte:hover img{transform:scale(1.04)}
+.carte:hover h3{color:#7D6432}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;background:#F1F3F7;color:#1F2B45}
+.seg{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid #C7CDD8;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+.champ{min-height:44px;padding:0 40px 0 14px;border:1px solid #C7CDD8;border-radius:2px;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:500}
+.pied a{color:#C3C9D6;text-decoration:none}.pied a:hover{color:#FFFFFF}
+:focus-visible{outline:3px solid #C9A96A;outline-offset:2px}
+@media (max-width:760px){.wrap{padding-left:20px;padding-right:20px}.h1{font-size:42px !important}.h2{font-size:32px !important}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #1F2B45; min-height: 100vh;">
+
+<header style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #E3E6EC;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding-top: 12px; padding-bottom: 12px;">
+<a href="Inclus-Accueil.dc.html" aria-label="H Décoration, retour à l’accueil" style="display: flex; align-items: center;">
+<img src="photos/25c92c92434e3bbd5e58a445370129f2.png" alt="H Décoration" style="height: 68px; width: auto; display: block;">
+</a>
+<nav class="nav" aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 4px 32px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;">
+<a href="Inclus-Prestation.dc.html">Prestations</a>
+<a href="Inclus-Realisations.dc.html" aria-current="page">Réalisations</a>
+<a href="Inclus-Accueil.dc.html#presentation">Présentation</a>
+<a href="Inclus-Contact.dc.html">Contact</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;">
+<a href="tel:+33677252445" style="display: flex; align-items: center; gap: 8px; color: #1F2B45; font-weight: 700; font-size: 17px; text-decoration: none; white-space: nowrap;">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7D6432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+06 77 25 24 45</a>
+<a class="btn btn-or" href="Inclus-Contact.dc.html">Demander un devis</a>
+</div>
+</div>
+</header>
+
+<main>
+
+<section style="background: #F1F3F7;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; padding-top: 72px; padding-bottom: 64px;">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 720px;">
+<p class="eyebrow" style="margin: 0;">Chantiers réalisés</p>
+<h1 class="serif h1" style="margin: 0; font-size: 68px; line-height: 1.04; font-weight: 700;"><span style="font-style: italic; font-weight: 400;">Nos</span> réalisations</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #3A4458;">Maisons, appartements, commerces et locaux de santé : nos chantiers à Angers et dans le Maine-et-Loire, photos à l’appui.</p>
+</div>
+<p style="margin: 0; font-size: 15px; color: #3A4458; max-width: 320px; line-height: 1.6;">Chaque fiche indique le lieu, les travaux réalisés et, quand nous les avons, les photos avant / après.</p>
+</div>
+</section>
+
+<section aria-label="Filtrer les réalisations" style="border-bottom: 1px solid #E3E6EC;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding-top: 24px; padding-bottom: 24px;">
+<div role="group" aria-label="Intérieur ou extérieur" style="display: flex; flex-wrap: wrap; gap: 8px;">
+<sc-for list="{{catBtns}}" as="b" hint-placeholder-count="3">
+<button type="button" class="seg" aria-pressed="{{b.pressed}}" onClick="{{b.pick}}" style="{{b.colors}}">{{b.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<label for="f-service" style="font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #566072;">Prestation</label>
+<select id="f-service" class="champ" value="{{service}}" onChange="{{onService}}">
+<option value="toutes">Toutes</option>
+<option value="peinture">Peinture</option>
+<option value="decoration">Décoration</option>
+<option value="sols">Revêtements de sol</option>
+<option value="placo">Placo et isolation</option>
+<option value="exterieur">Rénovation extérieure</option>
+</select>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+<label for="f-ville" style="font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #566072;">Ville</label>
+<select id="f-ville" class="champ" value="{{ville}}" onChange="{{onVille}}">
+<option value="toutes">Toutes</option>
+<option value="Angers">Angers</option>
+<option value="Le Lion-d’Angers">Le Lion-d’Angers</option>
+<option value="Soucelles">Soucelles</option>
+</select>
+</div>
+<p role="status" style="margin: 0; font-size: 14px; font-weight: 600; color: #1F2B45; min-width: 140px;">{{count}}</p>
+</div>
+</div>
+</section>
+
+<section aria-label="Liste des réalisations">
+<div class="wrap" style="padding-top: 56px; padding-bottom: 104px;">
+<sc-if value="{{hasResults}}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 56px 32px;">
+<sc-for list="{{shown}}" as="r" hint-placeholder-count="9">
+<a class="carte" href="Inclus-Realisation.dc.html" style="gap: 14px;">
+<div class="vis" style="position: relative; height: 300px;">
+<img loading="lazy" src="{{r.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+<sc-if value="{{r.ba}}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; left: 12px; top: 12px; background: #C9A96A; color: #1F2B45; padding: 6px 12px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;">Avant / après</span>
+</sc-if>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip">{{r.catLabel}}</span><span class="chip">{{r.client}}</span></div>
+<h3 class="serif" style="margin: 0; font-size: 23px; line-height: 1.25; font-weight: 700; transition: color .15s ease;">{{r.title}}</h3>
+<p style="margin: 0; font-size: 14px; color: #566072;">{{r.ville}} · {{r.label}} · {{r.year}}</p>
+</a>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 64px 32px; border: 1px dashed #C7CDD8; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;">
+<p class="serif" style="margin: 0; font-size: 26px; font-weight: 700;">Aucune réalisation ne correspond à ces filtres</p>
+<p style="margin: 0; font-size: 15px; color: #3A4458;">Essayez une autre prestation ou une autre ville.</p>
+<button type="button" class="btn btn-ligne" onClick="{{reset}}" style="cursor: pointer;">Voir toutes les réalisations</button>
+</div>
+</sc-if>
+</div>
+</section>
+
+<section aria-labelledby="titre-cta" style="background: #1F2B45; color: #FFFFFF;">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; padding-top: 80px; padding-bottom: 80px;">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px;">
+<h2 id="titre-cta" class="serif h2" style="margin: 0; font-size: 42px; line-height: 1.12; font-weight: 700; color: #FFFFFF;"><span style="font-style: italic; font-weight: 400;">Votre projet</span> sera peut-être le prochain</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #C3C9D6;">Décrivez-le en deux minutes, nous vous rappelons sous 48 h.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px;">
+<a href="tel:+33677252445" style="color: #FFFFFF; font-size: 30px; font-weight: 700; text-decoration: none; white-space: nowrap;">06 77 25 24 45</a>
+<a class="btn btn-clair" href="Inclus-Contact.dc.html">Demander un devis</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="pied" style="background: #172036; color: #C3C9D6;">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding-top: 72px; padding-bottom: 48px; font-size: 14px; line-height: 1.7;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<img src="photos/8766a01720ebb21b77ebbfa6ba550325.png" alt="H Décoration" style="height: 84px; width: auto; align-self: flex-start;">
+<p style="margin: 0;">Artisans peintres-décorateurs à Saint-Léger-de-Linières, pour les particuliers et les professionnels d’Angers et du Maine-et-Loire.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0 0 6px; color: #FFFFFF; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;">Prestations</p>
+<a href="Inclus-Prestation.dc.html">Peinture intérieure</a><a href="Inclus-Prestation.dc.html">Décoration intérieure</a><a href="Inclus-Prestation.dc.html">Revêtements de sol</a><a href="Inclus-Prestation.dc.html">Placo, cloisons et plafonds</a><a href="Inclus-Prestation.dc.html">Béton ciré</a><a href="Inclus-Prestation.dc.html">Rénovation extérieure</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0 0 6px; color: #FFFFFF; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;">H Décoration</p>
+<a href="Inclus-Realisations.dc.html">Réalisations</a><a href="Inclus-Accueil.dc.html#presentation">Présentation</a><a href="Inclus-Contact.dc.html">Demander un devis</a><a href="#">Mentions légales</a><a href="#">Politique de confidentialité</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<p style="margin: 0 0 6px; color: #FFFFFF; font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;">Coordonnées</p>
+<address style="font-style: normal;">ZA La Claverie II<br>10 rue Léonard de Vinci<br>49070 Saint-Léger-de-Linières</address>
+<a href="tel:+33677252445" style="color: #FFFFFF; font-weight: 700;">06 77 25 24 45</a>
+<a href="mailto:contact@h-decoration.fr">contact@h-decoration.fr</a>
+</div>
+</div>
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 24px; padding-bottom: 32px; border-top: 1px solid #2A3654; font-size: 12px; color: #A9B1C2;">
+<p style="margin: 0;">H-DECORATION, SAS au capital de 1 000 € · RCS Angers 909 669 376 · TVA FR52 909 669 376</p>
+<p style="margin: 0;">Aucun cookie publicitaire</p>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  items() {
+    return [
+      { id: 'bar', title: 'Rénovation d’un bar-restaurant sur deux étages', ville: 'Angers', cat: 'interieur', client: 'Professionnel', services: ['peinture', 'decoration'], label: 'Peinture, décoration', year: '2022', img: 'photos/e4e0c64e69bfd6f898bac397d8621e56.webp', ba: false },
+      { id: 'pole', title: 'Sols et peinture d’un pôle santé', ville: 'Le Lion-d’Angers', cat: 'interieur', client: 'Professionnel', services: ['sols', 'peinture'], label: 'Sols, peinture', year: '2023', img: 'photos/774dadc47394f182f760f8a1816344e4.webp', ba: false },
+      { id: 'toile', title: 'Toile tendue et dalles de moquette en salles de réunion', ville: 'Angers', cat: 'interieur', client: 'Professionnel', services: ['decoration', 'sols'], label: 'Décoration, sols', year: '2023', img: 'photos/e62dcd2d3e23a53f79ce511ad9d33cc9.webp', ba: false },
+      { id: 'facade', title: 'Façade en bardage douglas et crépi blanc', ville: 'Soucelles', cat: 'exterieur', client: 'Particulier', services: ['exterieur'], label: 'Rénovation extérieure', year: '2023', img: 'photos/a53eca7a3a1c31fc76ef5b330669d40e.webp', ba: false },
+      { id: 'pierre', title: 'Maison en pierre rénovée dans l’ancien', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture', 'placo', 'sols'], label: 'Peinture, placo, sols', year: '2023', img: 'photos/c15eb6ad24f8ec0d244678ec2a0ecd65.webp', ba: false },
+      { id: 'garage', title: 'Isolation intérieure d’un garage', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['placo'], label: 'Placo, isolation', year: '2023', img: 'photos/fa02e9aceb7ee56d4aa737d1775c01ac.webp', ba: false },
+      { id: 'escalier', title: 'Rénovation d’un escalier', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture'], label: 'Peinture', year: '2022', img: 'photos/3bca9b778c167198d212c628e3663f13.webp', ba: true },
+      { id: 'couloir', title: 'Couloir d’une maison du 19e siècle', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture', 'decoration'], label: 'Peinture, revêtements muraux', year: '2022', img: 'photos/d44fb1073b96694c90c9cf60f1b6e830.webp', ba: false },
+      { id: 'moderne', title: 'Rénovation complète d’une maison moderne', ville: 'Angers', cat: 'interieur', client: 'Particulier', services: ['peinture', 'decoration'], label: 'Peinture, décoration', year: '2022', img: 'photos/f518e11ab59c6afacd31c6b73595de35.webp', ba: false }
+    ];
+  }
+  renderVals() {
+    const st = this.state || {};
+    const cat = st.cat || 'toutes';
+    const service = st.service || 'toutes';
+    const ville = st.ville || 'toutes';
+    const shown = this.items()
+      .filter((r) => cat === 'toutes' || r.cat === cat)
+      .filter((r) => service === 'toutes' || r.services.indexOf(service) !== -1)
+      .filter((r) => ville === 'toutes' || r.ville === ville)
+      .map((r) => Object.assign({}, r, { catLabel: r.cat === 'exterieur' ? 'Extérieur' : 'Intérieur' }));
+    const choix = [['toutes', 'Tous les chantiers'], ['interieur', 'Intérieur'], ['exterieur', 'Extérieur']];
+    const catBtns = choix.map((c) => ({
+      label: c[1],
+      pressed: cat === c[0] ? 'true' : 'false',
+      colors: cat === c[0] ? 'background:#1F2B45;color:#FFFFFF;border-color:#1F2B45;' : 'background:#FFFFFF;color:#1F2B45;',
+      pick: () => this.setState({ cat: c[0] })
+    }));
+    const n = shown.length;
+    return {
+      catBtns: catBtns,
+      shown: shown,
+      service: service,
+      ville: ville,
+      hasResults: n > 0,
+      empty: n === 0,
+      count: n === 0 ? 'Aucune réalisation' : (n === 1 ? '1 réalisation' : n + ' réalisations'),
+      onService: (e) => this.setState({ service: e.target.value }),
+      onVille: (e) => this.setState({ ville: e.target.value }),
+      reset: () => this.setState({ cat: 'toutes', service: 'toutes', ville: 'toutes' })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=1280">
+<title>Visibilité espace pro</title>
+<script src="support.js"></script>
+<script>window.__dcLogique=function(DCLogic,StreamableLogic,React){
+
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const reponses = [
+      'Merci Claire pour votre confiance ! Ravis que le nouveau salon vous plaise. Au plaisir de vous retrouver pour la suite des travaux. Jérémy et Nicolas, H Décoration',
+      'Bonjour Claire, merci pour ce message ! Les conseils couleurs sont la partie du métier que nous préférons. Belle fin d’année dans votre nouveau salon. L’équipe H Décoration'
+    ];
+    const n = st.rep || 0;
+    const reponse = typeof st.reponse === 'string' ? st.reponse : reponses[n];
+    const faits = st.faits || {};
+    const libelles = [
+      'Publier 2 réalisations de sols : la recherche « revêtement de sol Angers » progresse',
+      'Répondre à l’avis de Claire L.',
+      'Envoyer les 2 demandes d’avis des chantiers terminés'
+    ];
+    const valeurs = [['Recherche Google', 4], ['Bouche-à-oreille', 3], ['Fiche Google (Maps)', 2], ['ChatGPT ou autre IA', 1], ['Camions et chantiers', 1]];
+    const max = 4;
+    return {
+      noop: () => {},
+      hasMessage: typeof st.message === 'string',
+      message: st.message || '',
+      telecharger: () => this.setState({ message: 'Rapport d’octobre prêt : il est aussi envoyé par e-mail à contact@h-decoration.fr.' }),
+      reponse: reponse,
+      onReponse: (e) => this.setState({ reponse: e.target.value }),
+      autreReponse: () => this.setState({ rep: (n + 1) % reponses.length, reponse: undefined }),
+      publierReponse: () => this.setState({ message: 'Réponse publiée sous l’avis de Claire L. sur Google.' }),
+      demanderAvis: () => this.setState({ message: 'Demande d’avis prête : message avec le lien vers votre fiche Google, relance dans 7 jours si besoin.' }),
+      qr: () => this.setState({ message: 'QR code de votre fiche Google prêt à imprimer ou à montrer sur le téléphone.' }),
+      actions: libelles.map((label, i) => {
+        const ok = faits[i] === true;
+        return {
+          label: label,
+          checked: ok ? 'true' : 'false',
+          box: ok ? 'background:#2F6B4A;border-color:#2F6B4A;' : 'background:#FFFFFF;',
+          tick: ok ? '' : 'visibility:hidden;',
+          text: ok ? 'text-decoration:line-through;color:#566072;' : '',
+          toggle: () => { const f = Object.assign({}, faits); f[i] = !ok; this.setState({ faits: f }); }
+        };
+      }),
+      sources: valeurs.map((s, i) => ({
+        label: s[0],
+        v: s[1],
+        style: 'width:' + Math.round((s[1] / max) * 100) + '%;background:' + (i === 3 ? '#7D6432' : '#1F2B45') + ';'
+      }))
+    };
+  }
+}
+
+;return (typeof Component!=="undefined"&&Component)||undefined;};</script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap">
+<style>
+body{margin:0;background:#F1F3F7;color:#1F2B45;font-family:Montserrat,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7D6432}a:hover{color:#1F2B45}
+.serif{font-family:"PT Serif",Georgia,"Times New Roman",serif}
+.side a{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 14px;border-radius:8px;color:#C3C9D6;text-decoration:none;font-size:14px;font-weight:600}
+.side a:hover{background:#2A3654;color:#FFFFFF}
+.side a[aria-current="page"]{background:#2A3654;color:#FFFFFF}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:8px;font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:14px;text-decoration:none;box-sizing:border-box;cursor:pointer;white-space:nowrap}
+.b-or{background:#7D6432;color:#FFFFFF;border:1px solid #7D6432}.b-or:hover{background:#1F2B45;border-color:#1F2B45;color:#FFFFFF}
+.b-ligne{background:#FFFFFF;color:#1F2B45;border:1px solid #9AA3B5}.b-ligne:hover{border-color:#1F2B45;color:#1F2B45}
+.panneau{background:#FFFFFF;border:1px solid #E3E6EC;border-radius:12px}
+.titre-p{margin:0;font-size:16px;font-weight:700;color:#1F2B45}
+.statut{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.st-nouv{background:#E8F0FA;color:#1F5FA8}.st-devis{background:#FBF1E3;color:#9A5B00}.st-gagne{background:#E7F3EC;color:#2F6B4A}.st-perdu{background:#EEF0F3;color:#566072}
+.option{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;border:1px solid #9F8045;color:#6E5729;background:#FBF7EF;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.ph{background:#FBF7EF;color:#6E5729;border-bottom:1px dashed #9F8045;padding:0 4px}
+.note{margin:0;font-size:12px;line-height:1.5;color:#566072}
+table.liste{width:100%;border-collapse:collapse;font-size:14px}
+table.liste th{text-align:left;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#566072;padding:10px 12px;border-bottom:1px solid #E3E6EC}
+table.liste td{padding:12px;border-bottom:1px solid #EEF0F3;vertical-align:middle}
+table.liste td.n,table.liste th.n{text-align:right;font-variant-numeric:tabular-nums}
+.champ{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #9AA3B5;border-radius:8px;background:#FFFFFF;color:#1F2B45;font-family:Montserrat,Arial,sans-serif;font-size:14px;line-height:1.55;resize:vertical}
+:focus-visible{outline:3px solid #C9A96A;outline-offset:2px}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; min-height: 100vh; background: #F1F3F7;">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 280px; background: #1F2B45; color: #FFFFFF; padding: 24px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px;">
+<div style="display: flex; align-items: center; gap: 12px; padding: 0 6px;"><img src="photos/8766a01720ebb21b77ebbfa6ba550325.png" alt="" style="height: 48px; width: auto;"><div><p style="margin: 0; font-weight: 700;">H Décoration</p><p style="margin: 0; font-size: 12px; color: #C3C9D6;">Espace pro</p></div></div>
+<nav aria-label="Menu de l’espace pro" style="display: flex; flex-direction: column; gap: 4px;">
+<a href="BO-Tableau-de-bord.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span style="flex: 1;">Tableau de bord</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Pages.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>Pages du site</a>
+<a href="BO-Demandes.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg><span style="flex: 1;">Demandes de devis</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Mobile.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>Réalisations</a>
+<a href="BO-Infos.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Infos de l’entreprise</a>
+<a href="BO-Planning.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span style="flex: 1;">Planning</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Visibilite.dc.html" aria-current="page"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg><span style="flex: 1;">Visibilité</span><span class="option" style="background: #2A3654; color: #C9A96A; border-color: #C9A96A;">Option</span></a>
+<a href="BO-Infos.dc.html"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Comptes et sécurité</a>
+</nav>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding: 14px; border: 1px solid #2A3654; border-radius: 10px; font-size: 12px; color: #C3C9D6;">
+<p style="margin: 0; display: flex; align-items: center; gap: 8px;"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Double authentification active</p>
+<a href="../site-v3-options/" target="_blank" rel="noopener" style="min-height: 0; padding: 0; color: #C9A96A; font-size: 13px;">Voir le site public</a>
+</div>
+</aside>
+
+<main style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px;">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;">
+<div><p style="margin: 0; font-size: 14px; color: #566072; display: flex; align-items: center; gap: 10px;">Octobre 2026 <span class="option">Option</span></p><h1 class="serif" style="margin: 4px 0 0; font-size: 36px; font-weight: 700;">Visibilité sur Google</h1></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;"><button type="button" class="b b-ligne" onClick="{{noop}}">Septembre</button><button type="button" class="b b-or" onClick="{{telecharger}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Rapport du mois (PDF)</button></div>
+</div>
+
+<sc-if value="{{hasMessage}}" hint-placeholder-val="{{ false }}">
+<p role="status" style="margin: 0; padding: 12px 16px; border-radius: 10px; background: #E7F3EC; color: #2F6B4A; font-size: 14px; font-weight: 600;">{{message}}</p>
+</sc-if>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+<div class="panneau" style="padding: 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 13px; font-weight: 600; color: #566072;">Recherche Google : clics vers le site</span><span style="font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums;">96</span><span style="font-size: 13px; color: #566072;">1 284 affichages dans les résultats</span><span class="statut st-gagne" style="align-self: flex-start;">+18 % sur septembre</span></div>
+<div class="panneau" style="padding: 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 13px; font-weight: 600; color: #566072;">Fiche Google : appels</span><span style="font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums;">41</span><span style="font-size: 13px; color: #566072;">23 itinéraires · 2 150 vues de la fiche</span><span class="statut st-gagne" style="align-self: flex-start;">+9 % sur septembre</span></div>
+<div class="panneau" style="padding: 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 13px; font-weight: 600; color: #566072;">Demandes de devis</span><span style="font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums;">11</span><span style="font-size: 13px; color: #566072;">dont 6 venues de Google</span><span class="statut st-nouv" style="align-self: flex-start;">3 à traiter</span></div>
+<div class="panneau" style="padding: 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 13px; font-weight: 600; color: #566072;">Avis Google</span><span style="font-size: 34px; font-weight: 700;"><span class="ph" style="font-size: 26px;">[note]</span></span><span style="font-size: 13px; color: #566072;"><span class="ph">[nombre] avis</span> · 2 nouveaux ce mois-ci</span><span class="statut st-devis" style="align-self: flex-start;">1 sans réponse</span></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+
+<section class="panneau" aria-labelledby="t-rapport" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;"><h2 id="t-rapport" class="titre-p">Le mois en bref</h2><span style="font-size: 12px; color: #566072;">Rédigé avec l’IA à partir des chiffres de la page, relu par Loïc</span></div>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #2C3447;">Octobre est le meilleur mois depuis la mise en ligne : <strong>96 visites venues de Google</strong> (+18 %) et <strong>41 appels depuis la fiche</strong>. La page Béton ciré gagne des places sur « béton ciré Angers » (position moyenne 8,4, contre 11,2 en septembre). La demande venue de ChatGPT citait la réalisation du pôle santé.</p>
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 12px; border-top: 1px solid #EEF0F3;">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #566072;">À faire en novembre</p>
+<sc-for list="{{actions}}" as="a" hint-placeholder-count="3">
+<button type="button" role="checkbox" aria-checked="{{a.checked}}" onClick="{{a.toggle}}" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 6px 0; border: 0; background: transparent; color: #1F2B45; font-family: Montserrat, Arial, sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer;"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; border-radius: 6px; border: 2px solid #1F2B45; box-sizing: border-box; display: flex; align-items: center; justify-content: center; {{a.box}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" style="{{a.tick}}"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span style="{{a.text}}">{{a.label}}</span></button>
+</sc-for>
+</div>
+</section>
+
+<section class="panneau" aria-labelledby="t-requetes" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;"><h2 id="t-requetes" class="titre-p">Les recherches qui vous amènent</h2><span style="font-size: 12px; color: #566072;">Source : Google Search Console</span></div>
+<div style="overflow-x: auto;">
+<table class="liste">
+<thead><tr><th scope="col">Recherche</th><th scope="col" class="n">Affichages</th><th scope="col" class="n">Clics</th><th scope="col" class="n">Position moyenne</th></tr></thead>
+<tbody>
+<tr><td style="font-weight: 600;">peintre angers</td><td class="n">412</td><td class="n">21</td><td class="n">9,8</td></tr>
+<tr><td style="font-weight: 600;">peinture intérieure angers</td><td class="n">210</td><td class="n">9</td><td class="n">12,6</td></tr>
+<tr><td style="font-weight: 600;">béton ciré angers</td><td class="n">128</td><td class="n">14</td><td class="n">8,4</td></tr>
+<tr><td style="font-weight: 600;">h décoration</td><td class="n">96</td><td class="n">38</td><td class="n">1,1</td></tr>
+<tr><td style="font-weight: 600;">rénovation façade maine et loire</td><td class="n">74</td><td class="n">3</td><td class="n">15,2</td></tr>
+<tr><td style="font-weight: 600;">revêtement de sol angers</td><td class="n">66</td><td class="n">4</td><td class="n">11,0</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">Position 1 à 10 : première page de Google. Les chiffres de ce mois sont des exemples.</p>
+</section>
+
+</div>
+
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+
+<section class="panneau" aria-labelledby="t-sources" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+<h2 id="t-sources" class="titre-p">D’où viennent les demandes</h2>
+<sc-for list="{{sources}}" as="s" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<div style="display: flex; justify-content: space-between; gap: 8px; font-size: 13px;"><span style="font-weight: 600;">{{s.label}}</span><span style="font-weight: 700; font-variant-numeric: tabular-nums;">{{s.v}}</span></div>
+<div aria-hidden="true" style="height: 8px; border-radius: 4px; background: #EEF0F3; overflow: hidden;"><div style="height: 100%; border-radius: 4px; {{s.style}}"></div></div>
+</div>
+</sc-for>
+<p class="note">D’après la question « Comment nous avez-vous connus ? » du formulaire de devis.</p>
+</section>
+
+<section class="panneau" aria-labelledby="t-avis" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;"><h2 id="t-avis" class="titre-p">Avis à traiter</h2><span class="statut st-devis">1 sans réponse</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 10px; background: #F7F8FB;">
+<p style="margin: 0; font-size: 13px; color: #566072;"><span aria-hidden="true" style="color: #9F8045; letter-spacing: 1px;">★★★★★</span> <span style="font-weight: 700; color: #1F2B45;">Claire L.</span> · il y a 3 jours</p>
+<p class="serif" style="margin: 0; font-size: 15px; font-style: italic; line-height: 1.55;">« Équipe ponctuelle et soignée, le salon est méconnaissable. Merci pour les conseils couleurs ! »</p>
+</div>
+<label for="v-reponse" style="font-size: 13px; font-weight: 700;">Réponse proposée par l’IA <span style="font-weight: 500; color: #566072;">(modifiable)</span></label>
+<textarea id="v-reponse" class="champ" rows="4" value="{{reponse}}" onChange="{{onReponse}}"></textarea>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><button type="button" class="b b-or" onClick="{{publierReponse}}">Publier sur Google</button><button type="button" class="b b-ligne" onClick="{{autreReponse}}">Autre proposition</button></div>
+<p class="note">Avant l’accès à l’API Google, le bouton devient « Copier » : la réponse se colle dans la fiche.</p>
+</section>
+
+<section class="panneau" aria-labelledby="t-demander" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 10px;">
+<h2 id="t-demander" class="titre-p">Chantiers terminés, sans demande d’avis</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid #EEF0F3;">
+<div style="flex: 1 1 160px; min-width: 0;"><p style="margin: 0; font-weight: 700; font-size: 14px;">Mme M. · Bouchemaine</p><p style="margin: 2px 0 0; font-size: 12px; color: #566072;">Sols LVT · terminé le 30 octobre</p></div>
+<button type="button" class="b b-ligne" onClick="{{demanderAvis}}" style="min-height: 40px; padding: 0 14px;">SMS</button><button type="button" class="b b-ligne" onClick="{{demanderAvis}}" style="min-height: 40px; padding: 0 14px;">E-mail</button><button type="button" class="b b-ligne" onClick="{{qr}}" style="min-height: 40px; padding: 0 14px;">QR code</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid #EEF0F3;">
+<div style="flex: 1 1 160px; min-width: 0;"><p style="margin: 0; font-weight: 700; font-size: 14px;">Restaurant (exemple) · Angers</p><p style="margin: 2px 0 0; font-size: 12px; color: #566072;">Décoration · terminé le 24 octobre</p></div>
+<button type="button" class="b b-ligne" onClick="{{demanderAvis}}" style="min-height: 40px; padding: 0 14px;">SMS</button><button type="button" class="b b-ligne" onClick="{{demanderAvis}}" style="min-height: 40px; padding: 0 14px;">E-mail</button><button type="button" class="b b-ligne" onClick="{{qr}}" style="min-height: 40px; padding: 0 14px;">QR code</button>
+</div>
+<p class="note">Le message contient le lien direct vers la fiche Google. Aucun cadeau ni tri des clients : c’est la règle de Google.</p>
+</section>
+
+</div>
+</div>
+
+<section class="panneau" aria-labelledby="t-connexions" style="padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;"><h2 id="t-connexions" class="titre-p">Connexions</h2><span style="font-size: 12px; color: #566072;">Tous les comptes sont au nom de H Décoration. Loïc y a un accès gestionnaire, révocable à tout moment.</span></div>
+<div style="overflow-x: auto;">
+<table class="liste">
+<thead><tr><th scope="col">Service</th><th scope="col">Sert à</th><th scope="col">État</th><th scope="col">Détail</th></tr></thead>
+<tbody>
+<tr><td style="font-weight: 700;">Fiche Google (Business Profile)</td><td>Posts, avis, appels et itinéraires</td><td><span class="statut st-devis">Accès API en attente</span></td><td style="font-size: 13px; color: #3A4458;">Google l’accorde à une fiche active depuis 60 jours. D’ici là : textes prêts à copier.</td></tr>
+<tr><td style="font-weight: 700;">Google Search Console</td><td>Recherches, clics, pages indexées</td><td><span class="statut st-gagne">Connectée</span></td><td style="font-size: 13px; color: #3A4458;">Domaine h-decoration.fr vérifié par le DNS.</td></tr>
+<tr><td style="font-weight: 700;">Bing Webmaster et IndexNow</td><td>Bing, Copilot, recherche de ChatGPT</td><td><span class="statut st-gagne">Connecté</span></td><td style="font-size: 13px; color: #3A4458;">Chaque nouvelle page est signalée automatiquement.</td></tr>
+<tr><td style="font-weight: 700;">Apple Business</td><td>Plans sur iPhone</td><td><span class="statut st-perdu">À jour à la main</span></td><td style="font-size: 13px; color: #3A4458;">Pas d’accès automatique pour une entreprise : vérifié deux fois par an.</td></tr>
+<tr><td style="font-weight: 700;">API Claude (rédaction)</td><td>Textes des réalisations, réponses aux avis, ce rapport</td><td><span class="statut st-gagne">Active</span></td><td style="font-size: 13px; color: #3A4458;">Plafond 10 € par mois · ce mois-ci : 2,40 €. Les données ne servent pas à entraîner l’IA.</td></tr>
+<tr><td style="font-weight: 700;">Instagram et Facebook</td><td>Publier les réalisations</td><td><span class="statut st-perdu">Non connecté</span></td><td style="font-size: 13px; color: #3A4458;"><span class="option">Option</span> Compte professionnel requis.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1650}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const reponses = [
+      'Merci Claire pour votre confiance ! Ravis que le nouveau salon vous plaise. Au plaisir de vous retrouver pour la suite des travaux. Jérémy et Nicolas, H Décoration',
+      'Bonjour Claire, merci pour ce message ! Les conseils couleurs sont la partie du métier que nous préférons. Belle fin d’année dans votre nouveau salon. L’équipe H Décoration'
+    ];
+    const n = st.rep || 0;
+    const reponse = typeof st.reponse === 'string' ? st.reponse : reponses[n];
+    const faits = st.faits || {};
+    const libelles = [
+      'Publier 2 réalisations de sols : la recherche « revêtement de sol Angers » progresse',
+      'Répondre à l’avis de Claire L.',
+      'Envoyer les 2 demandes d’avis des chantiers terminés'
+    ];
+    const valeurs = [['Recherche Google', 4], ['Bouche-à-oreille', 3], ['Fiche Google (Maps)', 2], ['ChatGPT ou autre IA', 1], ['Camions et chantiers', 1]];
+    const max = 4;
+    return {
+      noop: () => {},
+      hasMessage: typeof st.message === 'string',
+      message: st.message || '',
+      telecharger: () => this.setState({ message: 'Rapport d’octobre prêt : il est aussi envoyé par e-mail à contact@h-decoration.fr.' }),
+      reponse: reponse,
+      onReponse: (e) => this.setState({ reponse: e.target.value }),
+      autreReponse: () => this.setState({ rep: (n + 1) % reponses.length, reponse: undefined }),
+      publierReponse: () => this.setState({ message: 'Réponse publiée sous l’avis de Claire L. sur Google.' }),
+      demanderAvis: () => this.setState({ message: 'Demande d’avis prête : message avec le lien vers votre fiche Google, relance dans 7 jours si besoin.' }),
+      qr: () => this.setState({ message: 'QR code de votre fiche Google prêt à imprimer ou à montrer sur le téléphone.' }),
+      actions: libelles.map((label, i) => {
+        const ok = faits[i] === true;
+        return {
+          label: label,
+          checked: ok ? 'true' : 'false',
+          box: ok ? 'background:#2F6B4A;border-color:#2F6B4A;' : 'background:#FFFFFF;',
+          tick: ok ? '' : 'visibility:hidden;',
+          text: ok ? 'text-decoration:line-through;color:#566072;' : '',
+          toggle: () => { const f = Object.assign({}, faits); f[i] = !ok; this.setState({ faits: f }); }
+        };
+      }),
+      sources: valeurs.map((s, i) => ({
+        label: s[0],
+        v: s[1],
+        style: 'width:' + Math.round((s[1] / max) * 100) + '%;background:' + (i === 3 ? '#7D6432' : '#1F2B45') + ';'
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
