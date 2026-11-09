@@ -17,6 +17,7 @@ h1 em { font-weight: 400; }
 p.intro { color: var(--doux); font-size: 16px; line-height: 1.55; margin: 0 0 36px; max-width: 60ch; }
 .grille { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 @media (max-width: 640px) { .grille { grid-template-columns: 1fr; } }
+.large { grid-column: 1 / -1; }
 section { border: 1px solid var(--filet); padding: 22px 22px 10px; }
 h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 6px; }
 section p { font-size: 14px; color: var(--doux); margin: 0 0 14px; line-height: 1.5; }
@@ -45,6 +46,11 @@ a:focus-visible { outline: 2px solid var(--or); outline-offset: 3px; }
 <a href="site-v3-options/">Le site, accueil animé <span>Ouvrir →</span></a>
 <a href="site-v1-options/">Le site, accueil sans animation <span>Ouvrir →</span></a>
 <a href="espace-pro-options/">L’espace pro <span>Ouvrir →</span></a>
+</section>
+<section class="large">
+<h2>Essai de style</h2>
+<p>Le tableau de bord de l’espace pro, essayé avec un effet verre. Seul cet écran est fait. En haut, on choisit le fond : marine, photo de chantier ou clair.</p>
+<a href="espace-pro-glassy/">L’espace pro, effet verre <span>Ouvrir →</span></a>
 </section>
 </div>
 </main>
